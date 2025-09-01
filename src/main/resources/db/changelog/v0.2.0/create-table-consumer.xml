@@ -23,7 +23,6 @@
             <column name="basket_id" type="bigint">
                 <constraints nullable="true"/>
             </column>
-            re
         </createTable>
     </changeSet>
 
