@@ -12,17 +12,14 @@
                 <constraints primaryKey="true"/>
             </column>
 
-            <column name="name" type="varchar(64)">
-                <constraints nullable="false" unique="true"/>
+            <column name="name" type="varchar(124)">
+                <constraints nullable="false" unique="false"/>
             </column>
 
             <column name="active" type="boolean">
                 <constraints nullable="false"/>
             </column>
 
-            <column name="basket_id" type="bigint">
-                <constraints nullable="true"/>
-            </column>
         </createTable>
     </changeSet>
 
