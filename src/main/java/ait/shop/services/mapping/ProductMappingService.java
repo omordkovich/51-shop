@@ -14,22 +14,24 @@ public interface ProductMappingService {
     ProductDTO mapEntityToDto(Product entity);
 
 
-//  Ручной маппинг в class and @Service
-//    public Product mapDtoToEntity(ProductDTO dto) {
-//     if ( dto == null ) {
-//        return null;
-//    }
-//        Product entity = new Product();
-//        entity.setTitle(dto.getTitle());
-//        entity.setPrice(dto.getPrice());
-//        return entity;
-//    }
-//
-//    public ProductDTO mapEntityToDto(Product entity) {
-//        ProductDTO dto = new ProductDTO();
-//        dto.setId(entity.getId());
-//        dto.setTitle(entity.getTitle());
-//        dto.setPrice(entity.getPrice());
-//        return dto;
-//    }
+/*
+  Ручной маппинг в class and @Service
+    public Product mapDtoToEntity(ProductDTO dto) {
+     if ( dto == null ) {
+        return null;
+    }
+        Product entity = new Product();
+        entity.setTitle(dto.getTitle());
+        entity.setPrice(dto.getPrice());
+        return entity;
+    }
+
+    public ProductDTO mapEntityToDto(Product entity) {
+        ProductDTO dto = new ProductDTO();
+        dto.setId(entity.getId());
+        dto.setTitle(entity.getTitle());
+        dto.setPrice(entity.getPrice());
+        return dto;
+    }
+*/
 }

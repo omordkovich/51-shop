@@ -1,16 +1,16 @@
 package ait.shop.services.interfaces;
 
-import ait.shop.model.entity.Consumer;
+import ait.shop.model.dto.ConsumerDTO;
 
 import java.util.List;
 
 public interface IConsumerService {
 
-    Consumer saveConsumer(Consumer consumer);
+    ConsumerDTO saveConsumer(ConsumerDTO consumer);
 
-    Consumer getById(Long id);
+    ConsumerDTO getById(Long id);
 
-    List<Consumer> getAllActiveConsumers();
+    List<ConsumerDTO> getAllActiveConsumers();
 
 
 }
