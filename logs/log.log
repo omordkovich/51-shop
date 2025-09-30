@@ -1,32 +1,515 @@
-2025-09-25T20:00:46.169+02:00  INFO 28956 --- [shop_cohort51] [main] ait.shop.ShopCohort51Application         : Starting ShopCohort51Application using Java 17.0.16 with PID 28956 (D:\projects\ait_backend\shop_cohort51\target\classes started by ogors in D:\projects\ait_backend\shop_cohort51)
-2025-09-25T20:00:46.173+02:00  INFO 28956 --- [shop_cohort51] [main] ait.shop.ShopCohort51Application         : No active profile set, falling back to 1 default profile: "default"
-2025-09-25T20:00:47.093+02:00  INFO 28956 --- [shop_cohort51] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-09-25T20:00:47.161+02:00  INFO 28956 --- [shop_cohort51] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 58 ms. Found 4 JPA repository interfaces.
-2025-09-25T20:00:47.729+02:00  INFO 28956 --- [shop_cohort51] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2025-09-25T20:00:47.745+02:00  INFO 28956 --- [shop_cohort51] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-09-25T20:00:47.746+02:00  INFO 28956 --- [shop_cohort51] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.44]
-2025-09-25T20:00:47.851+02:00  INFO 28956 --- [shop_cohort51] [main] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring embedded WebApplicationContext
-2025-09-25T20:00:47.851+02:00  INFO 28956 --- [shop_cohort51] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1613 ms
-2025-09-25T20:00:48.015+02:00  INFO 28956 --- [shop_cohort51] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-09-25T20:00:48.194+02:00  INFO 28956 --- [shop_cohort51] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@8077c97
-2025-09-25T20:00:48.196+02:00  INFO 28956 --- [shop_cohort51] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-09-25T20:00:48.348+02:00  INFO 28956 --- [shop_cohort51] [main] liquibase.database                       : Set default schema name to public
-2025-09-25T20:00:48.895+02:00  INFO 28956 --- [shop_cohort51] [main] liquibase.changelog                      : Reading from public.databasechangelog
-2025-09-25T20:00:49.066+02:00  INFO 28956 --- [shop_cohort51] [main] liquibase.ui                             : Database is up to date, no changesets to execute
-2025-09-25T20:00:49.068+02:00  INFO 28956 --- [shop_cohort51] [main] liquibase.changelog                      : Reading from public.databasechangelog
-2025-09-25T20:00:49.080+02:00  INFO 28956 --- [shop_cohort51] [main] liquibase.util                           : UPDATE SUMMARY
-2025-09-25T20:00:49.080+02:00  INFO 28956 --- [shop_cohort51] [main] liquibase.util                           : Run:                          0
-2025-09-25T20:00:49.081+02:00  INFO 28956 --- [shop_cohort51] [main] liquibase.util                           : Previously run:              13
-2025-09-25T20:00:49.081+02:00  INFO 28956 --- [shop_cohort51] [main] liquibase.util                           : Filtered out:                 0
-2025-09-25T20:00:49.081+02:00  INFO 28956 --- [shop_cohort51] [main] liquibase.util                           : -------------------------------
-2025-09-25T20:00:49.081+02:00  INFO 28956 --- [shop_cohort51] [main] liquibase.util                           : Total change sets:           13
-2025-09-25T20:00:49.082+02:00  INFO 28956 --- [shop_cohort51] [main] liquibase.util                           : Update summary generated
-2025-09-25T20:00:49.083+02:00  INFO 28956 --- [shop_cohort51] [main] liquibase.command                        : Command execution complete
-2025-09-25T20:00:49.911+02:00  INFO 28956 --- [shop_cohort51] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-09-25T20:00:49.957+02:00  INFO 28956 --- [shop_cohort51] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.26.Final
-2025-09-25T20:00:49.987+02:00  INFO 28956 --- [shop_cohort51] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-09-25T20:00:50.252+02:00  INFO 28956 --- [shop_cohort51] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-09-25T20:00:50.335+02:00  INFO 28956 --- [shop_cohort51] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+2025-09-30T18:50:55.046+02:00  INFO 33192 --- [shop_cohort51] [main] ait.shop.ShopCohort51Application         : Starting ShopCohort51Application using Java 17.0.16 with PID 33192 (D:\projects\ait_backend\shop_cohort51\target\classes started by ogors in D:\projects\ait_backend\shop_cohort51)
+2025-09-30T18:50:55.060+02:00  INFO 33192 --- [shop_cohort51] [main] ait.shop.ShopCohort51Application         : No active profile set, falling back to 1 default profile: "default"
+2025-09-30T18:50:56.098+02:00  INFO 33192 --- [shop_cohort51] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-09-30T18:50:56.177+02:00  INFO 33192 --- [shop_cohort51] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 67 ms. Found 4 JPA repository interfaces.
+2025-09-30T18:50:57.043+02:00  INFO 33192 --- [shop_cohort51] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-09-30T18:50:57.058+02:00  INFO 33192 --- [shop_cohort51] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-09-30T18:50:57.058+02:00  INFO 33192 --- [shop_cohort51] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.44]
+2025-09-30T18:50:57.148+02:00  INFO 33192 --- [shop_cohort51] [main] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring embedded WebApplicationContext
+2025-09-30T18:50:57.149+02:00  INFO 33192 --- [shop_cohort51] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2032 ms
+2025-09-30T18:50:57.451+02:00  INFO 33192 --- [shop_cohort51] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-09-30T18:50:57.632+02:00  INFO 33192 --- [shop_cohort51] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6133e20b
+2025-09-30T18:50:57.634+02:00  INFO 33192 --- [shop_cohort51] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-09-30T18:50:57.807+02:00  INFO 33192 --- [shop_cohort51] [main] liquibase.database                       : Set default schema name to public
+2025-09-30T18:50:58.379+02:00  INFO 33192 --- [shop_cohort51] [main] liquibase.changelog                      : Reading from public.databasechangelog
+2025-09-30T18:50:58.664+02:00  INFO 33192 --- [shop_cohort51] [main] liquibase.lockservice                    : Changelog-Protokoll erfolgreich gesperrt.
+2025-09-30T18:50:58.667+02:00  INFO 33192 --- [shop_cohort51] [main] liquibase.command                        : Using deploymentId: 9251057428
+2025-09-30T18:50:58.669+02:00  INFO 33192 --- [shop_cohort51] [main] liquibase.changelog                      : Reading from public.databasechangelog
+2025-09-30T18:50:58.682+02:00  INFO 33192 --- [shop_cohort51] [main] liquibase.ui                             : Running Changeset: db/changelog/v0.5.0/changelog.xml::add-tag-0.5.0::OlegMordkovich
+2025-09-30T18:50:58.686+02:00  INFO 33192 --- [shop_cohort51] [main] liquibase.changelog                      : Tag 'v.0.5.0' applied to database
+2025-09-30T18:50:58.688+02:00  INFO 33192 --- [shop_cohort51] [main] liquibase.changelog                      : ChangeSet db/changelog/v0.5.0/changelog.xml::add-tag-0.5.0::OlegMordkovich ran successfully in 6ms
+2025-09-30T18:50:58.700+02:00  INFO 33192 --- [shop_cohort51] [main] liquibase.ui                             : Running Changeset: db/changelog/v0.5.0/create-table-cart-product.xml::create-table-cart-product::OlegMordkovich
+2025-09-30T18:50:58.718+02:00  INFO 33192 --- [shop_cohort51] [main] liquibase.changelog                      : Table cart-product created
+2025-09-30T18:50:58.721+02:00  INFO 33192 --- [shop_cohort51] [main] liquibase.changelog                      : ChangeSet db/changelog/v0.5.0/create-table-cart-product.xml::create-table-cart-product::OlegMordkovich ran successfully in 20ms
+2025-09-30T18:50:58.726+02:00  INFO 33192 --- [shop_cohort51] [main] liquibase.ui                             : Running Changeset: db/changelog/v0.5.0/add-foreign-keys-to-cart-product.xml::add-foreign-keys-to-cart-product::OlegMordkovich
+2025-09-30T18:50:58.731+02:00 ERROR 33192 --- [shop_cohort51] [main] liquibase.changelog                      : ChangeSet db/changelog/v0.5.0/add-foreign-keys-to-cart-product.xml::add-foreign-keys-to-cart-product::OlegMordkovich encountered an exception.
+
+liquibase.exception.DatabaseException: ERROR: relation "public.cart_product" does not exist [Failed SQL: (0) ALTER TABLE public.cart_product ADD CONSTRAINT fk_cart_product_to_cart FOREIGN KEY (cart_id) REFERENCES public.cart (id)]
+	at liquibase.executor.jvm.JdbcExecutor$ExecuteStatementCallback.doInStatement(JdbcExecutor.java:497) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.executor.jvm.JdbcExecutor.execute(JdbcExecutor.java:83) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.executor.jvm.JdbcExecutor.execute(JdbcExecutor.java:185) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.executor.AbstractExecutor.execute(AbstractExecutor.java:141) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.database.AbstractJdbcDatabase.executeStatements(AbstractJdbcDatabase.java:1189) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.changelog.ChangeSet.execute(ChangeSet.java:790) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.changelog.visitor.UpdateVisitor.executeAcceptedChange(UpdateVisitor.java:126) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.changelog.visitor.UpdateVisitor.visit(UpdateVisitor.java:70) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.changelog.ChangeLogIterator.lambda$run$0(ChangeLogIterator.java:133) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Scope.lambda$child$0(Scope.java:201) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Scope.child(Scope.java:210) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Scope.child(Scope.java:200) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Scope.child(Scope.java:179) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.changelog.ChangeLogIterator.lambda$run$1(ChangeLogIterator.java:122) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Scope.lambda$child$0(Scope.java:201) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Scope.child(Scope.java:210) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Scope.child(Scope.java:200) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Scope.child(Scope.java:179) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Scope.child(Scope.java:267) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Scope.child(Scope.java:271) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.changelog.ChangeLogIterator.run(ChangeLogIterator.java:91) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.command.core.AbstractUpdateCommandStep.lambda$run$0(AbstractUpdateCommandStep.java:114) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Scope.lambda$child$0(Scope.java:201) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Scope.child(Scope.java:210) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Scope.child(Scope.java:200) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Scope.child(Scope.java:179) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.command.core.AbstractUpdateCommandStep.run(AbstractUpdateCommandStep.java:112) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.command.core.UpdateCommandStep.run(UpdateCommandStep.java:100) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.command.CommandScope.lambda$execute$6(CommandScope.java:253) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Scope.child(Scope.java:210) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Scope.child(Scope.java:186) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.command.CommandScope.execute(CommandScope.java:241) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Liquibase.lambda$update$0(Liquibase.java:216) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Scope.lambda$child$0(Scope.java:201) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Scope.child(Scope.java:210) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Scope.child(Scope.java:200) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Scope.child(Scope.java:179) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Liquibase.runInScope(Liquibase.java:1333) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Liquibase.update(Liquibase.java:205) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Liquibase.update(Liquibase.java:188) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.integration.spring.SpringLiquibase.performUpdate(SpringLiquibase.java:326) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.integration.spring.SpringLiquibase.lambda$afterPropertiesSet$0(SpringLiquibase.java:278) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Scope.lambda$child$0(Scope.java:201) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Scope.child(Scope.java:210) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Scope.child(Scope.java:200) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Scope.child(Scope.java:179) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:271) ~[liquibase-core-4.31.1.jar:na]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1873) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1822) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:607) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:315) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:970) ~[spring-context-6.2.10.jar:6.2.10]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.10.jar:6.2.10]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.5.5.jar:3.5.5]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.5.5.jar:3.5.5]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.5.5.jar:3.5.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.5.5.jar:3.5.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.5.5.jar:3.5.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.5.5.jar:3.5.5]
+	at ait.shop.ShopCohort51Application.main(ShopCohort51Application.java:10) ~[classes/:na]
+Caused by: org.postgresql.util.PSQLException: ERROR: relation "public.cart_product" does not exist
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2734) ~[postgresql-42.7.7.jar:42.7.7]
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2421) ~[postgresql-42.7.7.jar:42.7.7]
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:372) ~[postgresql-42.7.7.jar:42.7.7]
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:518) ~[postgresql-42.7.7.jar:42.7.7]
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:435) ~[postgresql-42.7.7.jar:42.7.7]
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:357) ~[postgresql-42.7.7.jar:42.7.7]
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:342) ~[postgresql-42.7.7.jar:42.7.7]
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:318) ~[postgresql-42.7.7.jar:42.7.7]
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:313) ~[postgresql-42.7.7.jar:42.7.7]
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:95) ~[HikariCP-6.3.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java) ~[HikariCP-6.3.2.jar:na]
+	at liquibase.executor.jvm.JdbcExecutor$ExecuteStatementCallback.doInStatement(JdbcExecutor.java:491) ~[liquibase-core-4.31.1.jar:na]
+	... 65 common frames omitted
+
+2025-09-30T18:50:58.744+02:00  INFO 33192 --- [shop_cohort51] [main] liquibase.util                           : UPDATE SUMMARY
+2025-09-30T18:50:58.744+02:00  INFO 33192 --- [shop_cohort51] [main] liquibase.util                           : Run:                          2
+2025-09-30T18:50:58.744+02:00  INFO 33192 --- [shop_cohort51] [main] liquibase.util                           : Previously run:              13
+2025-09-30T18:50:58.744+02:00  INFO 33192 --- [shop_cohort51] [main] liquibase.util                           : Filtered out:                 0
+2025-09-30T18:50:58.745+02:00  INFO 33192 --- [shop_cohort51] [main] liquibase.util                           : -------------------------------
+2025-09-30T18:50:58.745+02:00  INFO 33192 --- [shop_cohort51] [main] liquibase.util                           : Total change sets:           16
+2025-09-30T18:50:58.745+02:00  INFO 33192 --- [shop_cohort51] [main] liquibase.util                           : Update summary generated
+2025-09-30T18:50:58.749+02:00  INFO 33192 --- [shop_cohort51] [main] liquibase.command                        : Update command encountered an exception.
+2025-09-30T18:50:58.757+02:00  INFO 33192 --- [shop_cohort51] [main] liquibase.lockservice                    : Successfully released change log lock
+2025-09-30T18:50:58.760+02:00  INFO 33192 --- [shop_cohort51] [main] liquibase.command                        : Logging exception.
+2025-09-30T18:50:58.761+02:00  INFO 33192 --- [shop_cohort51] [main] liquibase.ui                             : ERROR: Exception Details
+2025-09-30T18:50:58.761+02:00  INFO 33192 --- [shop_cohort51] [main] liquibase.ui                             : ERROR: Exception Primary Class:  PSQLException
+2025-09-30T18:50:58.761+02:00  INFO 33192 --- [shop_cohort51] [main] liquibase.ui                             : ERROR: Exception Primary Reason:  ERROR: relation "public.cart_product" does not exist
+2025-09-30T18:50:58.761+02:00  INFO 33192 --- [shop_cohort51] [main] liquibase.ui                             : ERROR: Exception Primary Source:  PostgreSQL 17.6 (Debian 17.6-1.pgdg13+1)
+2025-09-30T18:50:58.762+02:00  INFO 33192 --- [shop_cohort51] [main] liquibase.command                        : Command execution complete
+2025-09-30T18:50:59.459+02:00  WARN 33192 --- [shop_cohort51] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Failed to initialize dependency 'liquibase' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: liquibase.exception.CommandExecutionException: liquibase.exception.LiquibaseException: liquibase.exception.MigrationFailedException: Migration failed for changeset db/changelog/v0.5.0/add-foreign-keys-to-cart-product.xml::add-foreign-keys-to-cart-product::OlegMordkovich:
+     Reason: liquibase.exception.DatabaseException: ERROR: relation "public.cart_product" does not exist [Failed SQL: (0) ALTER TABLE public.cart_product ADD CONSTRAINT fk_cart_product_to_cart FOREIGN KEY (cart_id) REFERENCES public.cart (id)]
+2025-09-30T18:50:59.460+02:00  INFO 33192 --- [shop_cohort51] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-09-30T18:50:59.470+02:00  INFO 33192 --- [shop_cohort51] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-09-30T18:50:59.475+02:00  INFO 33192 --- [shop_cohort51] [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2025-09-30T18:50:59.490+02:00  INFO 33192 --- [shop_cohort51] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-09-30T18:50:59.506+02:00 ERROR 33192 --- [shop_cohort51] [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Failed to initialize dependency 'liquibase' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: liquibase.exception.CommandExecutionException: liquibase.exception.LiquibaseException: liquibase.exception.MigrationFailedException: Migration failed for changeset db/changelog/v0.5.0/add-foreign-keys-to-cart-product.xml::add-foreign-keys-to-cart-product::OlegMordkovich:
+     Reason: liquibase.exception.DatabaseException: ERROR: relation "public.cart_product" does not exist [Failed SQL: (0) ALTER TABLE public.cart_product ADD CONSTRAINT fk_cart_product_to_cart FOREIGN KEY (cart_id) REFERENCES public.cart (id)]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:328) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:970) ~[spring-context-6.2.10.jar:6.2.10]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.10.jar:6.2.10]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.5.5.jar:3.5.5]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.5.5.jar:3.5.5]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.5.5.jar:3.5.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.5.5.jar:3.5.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.5.5.jar:3.5.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.5.5.jar:3.5.5]
+	at ait.shop.ShopCohort51Application.main(ShopCohort51Application.java:10) ~[classes/:na]
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: liquibase.exception.CommandExecutionException: liquibase.exception.LiquibaseException: liquibase.exception.MigrationFailedException: Migration failed for changeset db/changelog/v0.5.0/add-foreign-keys-to-cart-product.xml::add-foreign-keys-to-cart-product::OlegMordkovich:
+     Reason: liquibase.exception.DatabaseException: ERROR: relation "public.cart_product" does not exist [Failed SQL: (0) ALTER TABLE public.cart_product ADD CONSTRAINT fk_cart_product_to_cart FOREIGN KEY (cart_id) REFERENCES public.cart (id)]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1826) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:607) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:315) ~[spring-beans-6.2.10.jar:6.2.10]
+	... 10 common frames omitted
+Caused by: liquibase.exception.LiquibaseException: liquibase.exception.CommandExecutionException: liquibase.exception.LiquibaseException: liquibase.exception.MigrationFailedException: Migration failed for changeset db/changelog/v0.5.0/add-foreign-keys-to-cart-product.xml::add-foreign-keys-to-cart-product::OlegMordkovich:
+     Reason: liquibase.exception.DatabaseException: ERROR: relation "public.cart_product" does not exist [Failed SQL: (0) ALTER TABLE public.cart_product ADD CONSTRAINT fk_cart_product_to_cart FOREIGN KEY (cart_id) REFERENCES public.cart (id)]
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:288) ~[liquibase-core-4.31.1.jar:na]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1873) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1822) ~[spring-beans-6.2.10.jar:6.2.10]
+	... 17 common frames omitted
+Caused by: liquibase.exception.CommandExecutionException: liquibase.exception.LiquibaseException: liquibase.exception.MigrationFailedException: Migration failed for changeset db/changelog/v0.5.0/add-foreign-keys-to-cart-product.xml::add-foreign-keys-to-cart-product::OlegMordkovich:
+     Reason: liquibase.exception.DatabaseException: ERROR: relation "public.cart_product" does not exist [Failed SQL: (0) ALTER TABLE public.cart_product ADD CONSTRAINT fk_cart_product_to_cart FOREIGN KEY (cart_id) REFERENCES public.cart (id)]
+	at liquibase.command.CommandScope.lambda$execute$6(CommandScope.java:300) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Scope.child(Scope.java:210) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Scope.child(Scope.java:186) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.command.CommandScope.execute(CommandScope.java:241) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Liquibase.lambda$update$0(Liquibase.java:216) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Scope.lambda$child$0(Scope.java:201) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Scope.child(Scope.java:210) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Scope.child(Scope.java:200) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Scope.child(Scope.java:179) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Liquibase.runInScope(Liquibase.java:1333) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Liquibase.update(Liquibase.java:205) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Liquibase.update(Liquibase.java:188) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.integration.spring.SpringLiquibase.performUpdate(SpringLiquibase.java:326) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.integration.spring.SpringLiquibase.lambda$afterPropertiesSet$0(SpringLiquibase.java:278) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Scope.lambda$child$0(Scope.java:201) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Scope.child(Scope.java:210) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Scope.child(Scope.java:200) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Scope.child(Scope.java:179) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:271) ~[liquibase-core-4.31.1.jar:na]
+	... 19 common frames omitted
+Caused by: liquibase.exception.LiquibaseException: liquibase.exception.MigrationFailedException: Migration failed for changeset db/changelog/v0.5.0/add-foreign-keys-to-cart-product.xml::add-foreign-keys-to-cart-product::OlegMordkovich:
+     Reason: liquibase.exception.DatabaseException: ERROR: relation "public.cart_product" does not exist [Failed SQL: (0) ALTER TABLE public.cart_product ADD CONSTRAINT fk_cart_product_to_cart FOREIGN KEY (cart_id) REFERENCES public.cart (id)]
+	at liquibase.changelog.ChangeLogIterator.run(ChangeLogIterator.java:155) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.command.core.AbstractUpdateCommandStep.lambda$run$0(AbstractUpdateCommandStep.java:114) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Scope.lambda$child$0(Scope.java:201) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Scope.child(Scope.java:210) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Scope.child(Scope.java:200) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Scope.child(Scope.java:179) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.command.core.AbstractUpdateCommandStep.run(AbstractUpdateCommandStep.java:112) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.command.core.UpdateCommandStep.run(UpdateCommandStep.java:100) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.command.CommandScope.lambda$execute$6(CommandScope.java:253) ~[liquibase-core-4.31.1.jar:na]
+	... 37 common frames omitted
+Caused by: liquibase.exception.MigrationFailedException: Migration failed for changeset db/changelog/v0.5.0/add-foreign-keys-to-cart-product.xml::add-foreign-keys-to-cart-product::OlegMordkovich:
+     Reason: liquibase.exception.DatabaseException: ERROR: relation "public.cart_product" does not exist [Failed SQL: (0) ALTER TABLE public.cart_product ADD CONSTRAINT fk_cart_product_to_cart FOREIGN KEY (cart_id) REFERENCES public.cart (id)]
+	at liquibase.changelog.ChangeSet.execute(ChangeSet.java:840) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.changelog.visitor.UpdateVisitor.executeAcceptedChange(UpdateVisitor.java:126) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.changelog.visitor.UpdateVisitor.visit(UpdateVisitor.java:70) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.changelog.ChangeLogIterator.lambda$run$0(ChangeLogIterator.java:133) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Scope.lambda$child$0(Scope.java:201) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Scope.child(Scope.java:210) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Scope.child(Scope.java:200) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Scope.child(Scope.java:179) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.changelog.ChangeLogIterator.lambda$run$1(ChangeLogIterator.java:122) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Scope.lambda$child$0(Scope.java:201) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Scope.child(Scope.java:210) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Scope.child(Scope.java:200) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Scope.child(Scope.java:179) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Scope.child(Scope.java:267) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Scope.child(Scope.java:271) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.changelog.ChangeLogIterator.run(ChangeLogIterator.java:91) ~[liquibase-core-4.31.1.jar:na]
+	... 45 common frames omitted
+Caused by: liquibase.exception.DatabaseException: ERROR: relation "public.cart_product" does not exist [Failed SQL: (0) ALTER TABLE public.cart_product ADD CONSTRAINT fk_cart_product_to_cart FOREIGN KEY (cart_id) REFERENCES public.cart (id)]
+	at liquibase.executor.jvm.JdbcExecutor$ExecuteStatementCallback.doInStatement(JdbcExecutor.java:497) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.executor.jvm.JdbcExecutor.execute(JdbcExecutor.java:83) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.executor.jvm.JdbcExecutor.execute(JdbcExecutor.java:185) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.executor.AbstractExecutor.execute(AbstractExecutor.java:141) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.database.AbstractJdbcDatabase.executeStatements(AbstractJdbcDatabase.java:1189) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.changelog.ChangeSet.execute(ChangeSet.java:790) ~[liquibase-core-4.31.1.jar:na]
+	... 60 common frames omitted
+Caused by: org.postgresql.util.PSQLException: ERROR: relation "public.cart_product" does not exist
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2734) ~[postgresql-42.7.7.jar:42.7.7]
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2421) ~[postgresql-42.7.7.jar:42.7.7]
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:372) ~[postgresql-42.7.7.jar:42.7.7]
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:518) ~[postgresql-42.7.7.jar:42.7.7]
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:435) ~[postgresql-42.7.7.jar:42.7.7]
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:357) ~[postgresql-42.7.7.jar:42.7.7]
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:342) ~[postgresql-42.7.7.jar:42.7.7]
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:318) ~[postgresql-42.7.7.jar:42.7.7]
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:313) ~[postgresql-42.7.7.jar:42.7.7]
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:95) ~[HikariCP-6.3.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java) ~[HikariCP-6.3.2.jar:na]
+	at liquibase.executor.jvm.JdbcExecutor$ExecuteStatementCallback.doInStatement(JdbcExecutor.java:491) ~[liquibase-core-4.31.1.jar:na]
+	... 65 common frames omitted
+
+2025-09-30T18:52:03.457+02:00  INFO 24556 --- [shop_cohort51] [main] ait.shop.ShopCohort51Application         : Starting ShopCohort51Application using Java 17.0.16 with PID 24556 (D:\projects\ait_backend\shop_cohort51\target\classes started by ogors in D:\projects\ait_backend\shop_cohort51)
+2025-09-30T18:52:03.460+02:00  INFO 24556 --- [shop_cohort51] [main] ait.shop.ShopCohort51Application         : No active profile set, falling back to 1 default profile: "default"
+2025-09-30T18:52:04.457+02:00  INFO 24556 --- [shop_cohort51] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-09-30T18:52:04.544+02:00  INFO 24556 --- [shop_cohort51] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 75 ms. Found 4 JPA repository interfaces.
+2025-09-30T18:52:05.271+02:00  INFO 24556 --- [shop_cohort51] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-09-30T18:52:05.283+02:00  INFO 24556 --- [shop_cohort51] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-09-30T18:52:05.283+02:00  INFO 24556 --- [shop_cohort51] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.44]
+2025-09-30T18:52:05.369+02:00  INFO 24556 --- [shop_cohort51] [main] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring embedded WebApplicationContext
+2025-09-30T18:52:05.369+02:00  INFO 24556 --- [shop_cohort51] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1851 ms
+2025-09-30T18:52:05.563+02:00  INFO 24556 --- [shop_cohort51] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-09-30T18:52:05.717+02:00  INFO 24556 --- [shop_cohort51] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@5ab7ac02
+2025-09-30T18:52:05.719+02:00  INFO 24556 --- [shop_cohort51] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-09-30T18:52:05.868+02:00  INFO 24556 --- [shop_cohort51] [main] liquibase.database                       : Set default schema name to public
+2025-09-30T18:52:06.364+02:00  INFO 24556 --- [shop_cohort51] [main] liquibase.changelog                      : Reading from public.databasechangelog
+2025-09-30T18:52:06.614+02:00  INFO 24556 --- [shop_cohort51] [main] liquibase.lockservice                    : Changelog-Protokoll erfolgreich gesperrt.
+2025-09-30T18:52:06.616+02:00  INFO 24556 --- [shop_cohort51] [main] liquibase.command                        : Using deploymentId: 9251125543
+2025-09-30T18:52:06.619+02:00  INFO 24556 --- [shop_cohort51] [main] liquibase.changelog                      : Reading from public.databasechangelog
+2025-09-30T18:52:06.634+02:00  INFO 24556 --- [shop_cohort51] [main] liquibase.ui                             : Running Changeset: db/changelog/v0.5.0/add-foreign-keys-to-cart-product.xml::add-foreign-keys-to-cart-product::OlegMordkovich
+2025-09-30T18:52:06.646+02:00 ERROR 24556 --- [shop_cohort51] [main] liquibase.changelog                      : ChangeSet db/changelog/v0.5.0/add-foreign-keys-to-cart-product.xml::add-foreign-keys-to-cart-product::OlegMordkovich encountered an exception.
+
+liquibase.exception.DatabaseException: ERROR: relation "public.cart_product" does not exist [Failed SQL: (0) ALTER TABLE public.cart_product ADD CONSTRAINT fk_cart_product_to_cart FOREIGN KEY (cart_id) REFERENCES public.cart (id)]
+	at liquibase.executor.jvm.JdbcExecutor$ExecuteStatementCallback.doInStatement(JdbcExecutor.java:497) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.executor.jvm.JdbcExecutor.execute(JdbcExecutor.java:83) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.executor.jvm.JdbcExecutor.execute(JdbcExecutor.java:185) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.executor.AbstractExecutor.execute(AbstractExecutor.java:141) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.database.AbstractJdbcDatabase.executeStatements(AbstractJdbcDatabase.java:1189) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.changelog.ChangeSet.execute(ChangeSet.java:790) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.changelog.visitor.UpdateVisitor.executeAcceptedChange(UpdateVisitor.java:126) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.changelog.visitor.UpdateVisitor.visit(UpdateVisitor.java:70) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.changelog.ChangeLogIterator.lambda$run$0(ChangeLogIterator.java:133) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Scope.lambda$child$0(Scope.java:201) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Scope.child(Scope.java:210) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Scope.child(Scope.java:200) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Scope.child(Scope.java:179) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.changelog.ChangeLogIterator.lambda$run$1(ChangeLogIterator.java:122) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Scope.lambda$child$0(Scope.java:201) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Scope.child(Scope.java:210) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Scope.child(Scope.java:200) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Scope.child(Scope.java:179) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Scope.child(Scope.java:267) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Scope.child(Scope.java:271) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.changelog.ChangeLogIterator.run(ChangeLogIterator.java:91) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.command.core.AbstractUpdateCommandStep.lambda$run$0(AbstractUpdateCommandStep.java:114) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Scope.lambda$child$0(Scope.java:201) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Scope.child(Scope.java:210) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Scope.child(Scope.java:200) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Scope.child(Scope.java:179) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.command.core.AbstractUpdateCommandStep.run(AbstractUpdateCommandStep.java:112) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.command.core.UpdateCommandStep.run(UpdateCommandStep.java:100) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.command.CommandScope.lambda$execute$6(CommandScope.java:253) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Scope.child(Scope.java:210) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Scope.child(Scope.java:186) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.command.CommandScope.execute(CommandScope.java:241) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Liquibase.lambda$update$0(Liquibase.java:216) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Scope.lambda$child$0(Scope.java:201) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Scope.child(Scope.java:210) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Scope.child(Scope.java:200) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Scope.child(Scope.java:179) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Liquibase.runInScope(Liquibase.java:1333) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Liquibase.update(Liquibase.java:205) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Liquibase.update(Liquibase.java:188) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.integration.spring.SpringLiquibase.performUpdate(SpringLiquibase.java:326) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.integration.spring.SpringLiquibase.lambda$afterPropertiesSet$0(SpringLiquibase.java:278) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Scope.lambda$child$0(Scope.java:201) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Scope.child(Scope.java:210) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Scope.child(Scope.java:200) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Scope.child(Scope.java:179) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:271) ~[liquibase-core-4.31.1.jar:na]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1873) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1822) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:607) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:315) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:970) ~[spring-context-6.2.10.jar:6.2.10]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.10.jar:6.2.10]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.5.5.jar:3.5.5]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.5.5.jar:3.5.5]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.5.5.jar:3.5.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.5.5.jar:3.5.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.5.5.jar:3.5.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.5.5.jar:3.5.5]
+	at ait.shop.ShopCohort51Application.main(ShopCohort51Application.java:10) ~[classes/:na]
+Caused by: org.postgresql.util.PSQLException: ERROR: relation "public.cart_product" does not exist
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2734) ~[postgresql-42.7.7.jar:42.7.7]
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2421) ~[postgresql-42.7.7.jar:42.7.7]
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:372) ~[postgresql-42.7.7.jar:42.7.7]
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:518) ~[postgresql-42.7.7.jar:42.7.7]
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:435) ~[postgresql-42.7.7.jar:42.7.7]
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:357) ~[postgresql-42.7.7.jar:42.7.7]
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:342) ~[postgresql-42.7.7.jar:42.7.7]
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:318) ~[postgresql-42.7.7.jar:42.7.7]
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:313) ~[postgresql-42.7.7.jar:42.7.7]
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:95) ~[HikariCP-6.3.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java) ~[HikariCP-6.3.2.jar:na]
+	at liquibase.executor.jvm.JdbcExecutor$ExecuteStatementCallback.doInStatement(JdbcExecutor.java:491) ~[liquibase-core-4.31.1.jar:na]
+	... 65 common frames omitted
+
+2025-09-30T18:52:06.661+02:00  INFO 24556 --- [shop_cohort51] [main] liquibase.util                           : UPDATE SUMMARY
+2025-09-30T18:52:06.661+02:00  INFO 24556 --- [shop_cohort51] [main] liquibase.util                           : Run:                          0
+2025-09-30T18:52:06.661+02:00  INFO 24556 --- [shop_cohort51] [main] liquibase.util                           : Previously run:              15
+2025-09-30T18:52:06.661+02:00  INFO 24556 --- [shop_cohort51] [main] liquibase.util                           : Filtered out:                 0
+2025-09-30T18:52:06.661+02:00  INFO 24556 --- [shop_cohort51] [main] liquibase.util                           : -------------------------------
+2025-09-30T18:52:06.661+02:00  INFO 24556 --- [shop_cohort51] [main] liquibase.util                           : Total change sets:           16
+2025-09-30T18:52:06.662+02:00  INFO 24556 --- [shop_cohort51] [main] liquibase.util                           : Update summary generated
+2025-09-30T18:52:06.665+02:00  INFO 24556 --- [shop_cohort51] [main] liquibase.command                        : Update command encountered an exception.
+2025-09-30T18:52:06.674+02:00  INFO 24556 --- [shop_cohort51] [main] liquibase.lockservice                    : Successfully released change log lock
+2025-09-30T18:52:06.677+02:00  INFO 24556 --- [shop_cohort51] [main] liquibase.command                        : Logging exception.
+2025-09-30T18:52:06.678+02:00  INFO 24556 --- [shop_cohort51] [main] liquibase.ui                             : ERROR: Exception Details
+2025-09-30T18:52:06.678+02:00  INFO 24556 --- [shop_cohort51] [main] liquibase.ui                             : ERROR: Exception Primary Class:  PSQLException
+2025-09-30T18:52:06.678+02:00  INFO 24556 --- [shop_cohort51] [main] liquibase.ui                             : ERROR: Exception Primary Reason:  ERROR: relation "public.cart_product" does not exist
+2025-09-30T18:52:06.678+02:00  INFO 24556 --- [shop_cohort51] [main] liquibase.ui                             : ERROR: Exception Primary Source:  PostgreSQL 17.6 (Debian 17.6-1.pgdg13+1)
+2025-09-30T18:52:06.680+02:00  INFO 24556 --- [shop_cohort51] [main] liquibase.command                        : Command execution complete
+2025-09-30T18:52:07.157+02:00  WARN 24556 --- [shop_cohort51] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Failed to initialize dependency 'liquibase' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: liquibase.exception.CommandExecutionException: liquibase.exception.LiquibaseException: liquibase.exception.MigrationFailedException: Migration failed for changeset db/changelog/v0.5.0/add-foreign-keys-to-cart-product.xml::add-foreign-keys-to-cart-product::OlegMordkovich:
+     Reason: liquibase.exception.DatabaseException: ERROR: relation "public.cart_product" does not exist [Failed SQL: (0) ALTER TABLE public.cart_product ADD CONSTRAINT fk_cart_product_to_cart FOREIGN KEY (cart_id) REFERENCES public.cart (id)]
+2025-09-30T18:52:07.157+02:00  INFO 24556 --- [shop_cohort51] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-09-30T18:52:07.162+02:00  INFO 24556 --- [shop_cohort51] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-09-30T18:52:07.166+02:00  INFO 24556 --- [shop_cohort51] [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2025-09-30T18:52:07.177+02:00  INFO 24556 --- [shop_cohort51] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-09-30T18:52:07.190+02:00 ERROR 24556 --- [shop_cohort51] [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Failed to initialize dependency 'liquibase' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: liquibase.exception.CommandExecutionException: liquibase.exception.LiquibaseException: liquibase.exception.MigrationFailedException: Migration failed for changeset db/changelog/v0.5.0/add-foreign-keys-to-cart-product.xml::add-foreign-keys-to-cart-product::OlegMordkovich:
+     Reason: liquibase.exception.DatabaseException: ERROR: relation "public.cart_product" does not exist [Failed SQL: (0) ALTER TABLE public.cart_product ADD CONSTRAINT fk_cart_product_to_cart FOREIGN KEY (cart_id) REFERENCES public.cart (id)]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:328) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:970) ~[spring-context-6.2.10.jar:6.2.10]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.10.jar:6.2.10]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.5.5.jar:3.5.5]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.5.5.jar:3.5.5]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.5.5.jar:3.5.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.5.5.jar:3.5.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.5.5.jar:3.5.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.5.5.jar:3.5.5]
+	at ait.shop.ShopCohort51Application.main(ShopCohort51Application.java:10) ~[classes/:na]
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: liquibase.exception.CommandExecutionException: liquibase.exception.LiquibaseException: liquibase.exception.MigrationFailedException: Migration failed for changeset db/changelog/v0.5.0/add-foreign-keys-to-cart-product.xml::add-foreign-keys-to-cart-product::OlegMordkovich:
+     Reason: liquibase.exception.DatabaseException: ERROR: relation "public.cart_product" does not exist [Failed SQL: (0) ALTER TABLE public.cart_product ADD CONSTRAINT fk_cart_product_to_cart FOREIGN KEY (cart_id) REFERENCES public.cart (id)]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1826) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:607) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:315) ~[spring-beans-6.2.10.jar:6.2.10]
+	... 10 common frames omitted
+Caused by: liquibase.exception.LiquibaseException: liquibase.exception.CommandExecutionException: liquibase.exception.LiquibaseException: liquibase.exception.MigrationFailedException: Migration failed for changeset db/changelog/v0.5.0/add-foreign-keys-to-cart-product.xml::add-foreign-keys-to-cart-product::OlegMordkovich:
+     Reason: liquibase.exception.DatabaseException: ERROR: relation "public.cart_product" does not exist [Failed SQL: (0) ALTER TABLE public.cart_product ADD CONSTRAINT fk_cart_product_to_cart FOREIGN KEY (cart_id) REFERENCES public.cart (id)]
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:288) ~[liquibase-core-4.31.1.jar:na]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1873) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1822) ~[spring-beans-6.2.10.jar:6.2.10]
+	... 17 common frames omitted
+Caused by: liquibase.exception.CommandExecutionException: liquibase.exception.LiquibaseException: liquibase.exception.MigrationFailedException: Migration failed for changeset db/changelog/v0.5.0/add-foreign-keys-to-cart-product.xml::add-foreign-keys-to-cart-product::OlegMordkovich:
+     Reason: liquibase.exception.DatabaseException: ERROR: relation "public.cart_product" does not exist [Failed SQL: (0) ALTER TABLE public.cart_product ADD CONSTRAINT fk_cart_product_to_cart FOREIGN KEY (cart_id) REFERENCES public.cart (id)]
+	at liquibase.command.CommandScope.lambda$execute$6(CommandScope.java:300) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Scope.child(Scope.java:210) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Scope.child(Scope.java:186) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.command.CommandScope.execute(CommandScope.java:241) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Liquibase.lambda$update$0(Liquibase.java:216) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Scope.lambda$child$0(Scope.java:201) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Scope.child(Scope.java:210) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Scope.child(Scope.java:200) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Scope.child(Scope.java:179) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Liquibase.runInScope(Liquibase.java:1333) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Liquibase.update(Liquibase.java:205) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Liquibase.update(Liquibase.java:188) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.integration.spring.SpringLiquibase.performUpdate(SpringLiquibase.java:326) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.integration.spring.SpringLiquibase.lambda$afterPropertiesSet$0(SpringLiquibase.java:278) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Scope.lambda$child$0(Scope.java:201) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Scope.child(Scope.java:210) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Scope.child(Scope.java:200) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Scope.child(Scope.java:179) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:271) ~[liquibase-core-4.31.1.jar:na]
+	... 19 common frames omitted
+Caused by: liquibase.exception.LiquibaseException: liquibase.exception.MigrationFailedException: Migration failed for changeset db/changelog/v0.5.0/add-foreign-keys-to-cart-product.xml::add-foreign-keys-to-cart-product::OlegMordkovich:
+     Reason: liquibase.exception.DatabaseException: ERROR: relation "public.cart_product" does not exist [Failed SQL: (0) ALTER TABLE public.cart_product ADD CONSTRAINT fk_cart_product_to_cart FOREIGN KEY (cart_id) REFERENCES public.cart (id)]
+	at liquibase.changelog.ChangeLogIterator.run(ChangeLogIterator.java:155) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.command.core.AbstractUpdateCommandStep.lambda$run$0(AbstractUpdateCommandStep.java:114) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Scope.lambda$child$0(Scope.java:201) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Scope.child(Scope.java:210) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Scope.child(Scope.java:200) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Scope.child(Scope.java:179) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.command.core.AbstractUpdateCommandStep.run(AbstractUpdateCommandStep.java:112) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.command.core.UpdateCommandStep.run(UpdateCommandStep.java:100) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.command.CommandScope.lambda$execute$6(CommandScope.java:253) ~[liquibase-core-4.31.1.jar:na]
+	... 37 common frames omitted
+Caused by: liquibase.exception.MigrationFailedException: Migration failed for changeset db/changelog/v0.5.0/add-foreign-keys-to-cart-product.xml::add-foreign-keys-to-cart-product::OlegMordkovich:
+     Reason: liquibase.exception.DatabaseException: ERROR: relation "public.cart_product" does not exist [Failed SQL: (0) ALTER TABLE public.cart_product ADD CONSTRAINT fk_cart_product_to_cart FOREIGN KEY (cart_id) REFERENCES public.cart (id)]
+	at liquibase.changelog.ChangeSet.execute(ChangeSet.java:840) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.changelog.visitor.UpdateVisitor.executeAcceptedChange(UpdateVisitor.java:126) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.changelog.visitor.UpdateVisitor.visit(UpdateVisitor.java:70) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.changelog.ChangeLogIterator.lambda$run$0(ChangeLogIterator.java:133) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Scope.lambda$child$0(Scope.java:201) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Scope.child(Scope.java:210) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Scope.child(Scope.java:200) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Scope.child(Scope.java:179) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.changelog.ChangeLogIterator.lambda$run$1(ChangeLogIterator.java:122) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Scope.lambda$child$0(Scope.java:201) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Scope.child(Scope.java:210) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Scope.child(Scope.java:200) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Scope.child(Scope.java:179) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Scope.child(Scope.java:267) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.Scope.child(Scope.java:271) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.changelog.ChangeLogIterator.run(ChangeLogIterator.java:91) ~[liquibase-core-4.31.1.jar:na]
+	... 45 common frames omitted
+Caused by: liquibase.exception.DatabaseException: ERROR: relation "public.cart_product" does not exist [Failed SQL: (0) ALTER TABLE public.cart_product ADD CONSTRAINT fk_cart_product_to_cart FOREIGN KEY (cart_id) REFERENCES public.cart (id)]
+	at liquibase.executor.jvm.JdbcExecutor$ExecuteStatementCallback.doInStatement(JdbcExecutor.java:497) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.executor.jvm.JdbcExecutor.execute(JdbcExecutor.java:83) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.executor.jvm.JdbcExecutor.execute(JdbcExecutor.java:185) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.executor.AbstractExecutor.execute(AbstractExecutor.java:141) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.database.AbstractJdbcDatabase.executeStatements(AbstractJdbcDatabase.java:1189) ~[liquibase-core-4.31.1.jar:na]
+	at liquibase.changelog.ChangeSet.execute(ChangeSet.java:790) ~[liquibase-core-4.31.1.jar:na]
+	... 60 common frames omitted
+Caused by: org.postgresql.util.PSQLException: ERROR: relation "public.cart_product" does not exist
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2734) ~[postgresql-42.7.7.jar:42.7.7]
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2421) ~[postgresql-42.7.7.jar:42.7.7]
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:372) ~[postgresql-42.7.7.jar:42.7.7]
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:518) ~[postgresql-42.7.7.jar:42.7.7]
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:435) ~[postgresql-42.7.7.jar:42.7.7]
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:357) ~[postgresql-42.7.7.jar:42.7.7]
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:342) ~[postgresql-42.7.7.jar:42.7.7]
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:318) ~[postgresql-42.7.7.jar:42.7.7]
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:313) ~[postgresql-42.7.7.jar:42.7.7]
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:95) ~[HikariCP-6.3.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java) ~[HikariCP-6.3.2.jar:na]
+	at liquibase.executor.jvm.JdbcExecutor$ExecuteStatementCallback.doInStatement(JdbcExecutor.java:491) ~[liquibase-core-4.31.1.jar:na]
+	... 65 common frames omitted
+
+2025-09-30T18:56:22.284+02:00  INFO 26228 --- [shop_cohort51] [main] ait.shop.ShopCohort51Application         : Starting ShopCohort51Application using Java 17.0.16 with PID 26228 (D:\projects\ait_backend\shop_cohort51\target\classes started by ogors in D:\projects\ait_backend\shop_cohort51)
+2025-09-30T18:56:22.287+02:00  INFO 26228 --- [shop_cohort51] [main] ait.shop.ShopCohort51Application         : No active profile set, falling back to 1 default profile: "default"
+2025-09-30T18:56:23.296+02:00  INFO 26228 --- [shop_cohort51] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-09-30T18:56:23.361+02:00  INFO 26228 --- [shop_cohort51] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 57 ms. Found 4 JPA repository interfaces.
+2025-09-30T18:56:24.113+02:00  INFO 26228 --- [shop_cohort51] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-09-30T18:56:24.128+02:00  INFO 26228 --- [shop_cohort51] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-09-30T18:56:24.128+02:00  INFO 26228 --- [shop_cohort51] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.44]
+2025-09-30T18:56:24.215+02:00  INFO 26228 --- [shop_cohort51] [main] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring embedded WebApplicationContext
+2025-09-30T18:56:24.215+02:00  INFO 26228 --- [shop_cohort51] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1872 ms
+2025-09-30T18:56:24.479+02:00  INFO 26228 --- [shop_cohort51] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-09-30T18:56:24.651+02:00  INFO 26228 --- [shop_cohort51] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1f45db49
+2025-09-30T18:56:24.654+02:00  INFO 26228 --- [shop_cohort51] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-09-30T18:56:24.791+02:00  INFO 26228 --- [shop_cohort51] [main] liquibase.database                       : Set default schema name to public
+2025-09-30T18:56:25.292+02:00  INFO 26228 --- [shop_cohort51] [main] liquibase.changelog                      : Reading from public.databasechangelog
+2025-09-30T18:56:25.561+02:00  INFO 26228 --- [shop_cohort51] [main] liquibase.lockservice                    : Changelog-Protokoll erfolgreich gesperrt.
+2025-09-30T18:56:25.563+02:00  INFO 26228 --- [shop_cohort51] [main] liquibase.command                        : Using deploymentId: 9251384452
+2025-09-30T18:56:25.566+02:00  INFO 26228 --- [shop_cohort51] [main] liquibase.changelog                      : Reading from public.databasechangelog
+2025-09-30T18:56:25.580+02:00  INFO 26228 --- [shop_cohort51] [main] liquibase.ui                             : Running Changeset: db/changelog/v0.5.0/alter-table-cart-product.xml::alter-table-cart-product::OlegMordkovich
+2025-09-30T18:56:25.588+02:00  INFO 26228 --- [shop_cohort51] [main] liquibase.changelog                      : Table cart-product renamed to cart_product
+2025-09-30T18:56:25.596+02:00  INFO 26228 --- [shop_cohort51] [main] liquibase.changelog                      : ChangeSet db/changelog/v0.5.0/alter-table-cart-product.xml::alter-table-cart-product::OlegMordkovich ran successfully in 15ms
+2025-09-30T18:56:25.605+02:00  INFO 26228 --- [shop_cohort51] [main] liquibase.ui                             : Running Changeset: db/changelog/v0.5.0/add-foreign-keys-to-cart-product.xml::add-foreign-keys-to-cart-product::OlegMordkovich
+2025-09-30T18:56:25.611+02:00  INFO 26228 --- [shop_cohort51] [main] liquibase.changelog                      : Foreign key constraint added to cart_product (cart_id)
+2025-09-30T18:56:25.614+02:00  INFO 26228 --- [shop_cohort51] [main] liquibase.changelog                      : Foreign key constraint added to cart_product (product_id)
+2025-09-30T18:56:25.617+02:00  INFO 26228 --- [shop_cohort51] [main] liquibase.changelog                      : ChangeSet db/changelog/v0.5.0/add-foreign-keys-to-cart-product.xml::add-foreign-keys-to-cart-product::OlegMordkovich ran successfully in 12ms
+2025-09-30T18:56:25.630+02:00  INFO 26228 --- [shop_cohort51] [main] liquibase.util                           : UPDATE SUMMARY
+2025-09-30T18:56:25.630+02:00  INFO 26228 --- [shop_cohort51] [main] liquibase.util                           : Run:                          2
+2025-09-30T18:56:25.630+02:00  INFO 26228 --- [shop_cohort51] [main] liquibase.util                           : Previously run:              15
+2025-09-30T18:56:25.630+02:00  INFO 26228 --- [shop_cohort51] [main] liquibase.util                           : Filtered out:                 0
+2025-09-30T18:56:25.630+02:00  INFO 26228 --- [shop_cohort51] [main] liquibase.util                           : -------------------------------
+2025-09-30T18:56:25.630+02:00  INFO 26228 --- [shop_cohort51] [main] liquibase.util                           : Total change sets:           17
+2025-09-30T18:56:25.631+02:00  INFO 26228 --- [shop_cohort51] [main] liquibase.util                           : Update summary generated
+2025-09-30T18:56:25.634+02:00  INFO 26228 --- [shop_cohort51] [main] liquibase.command                        : Update command completed successfully.
+2025-09-30T18:56:25.634+02:00  INFO 26228 --- [shop_cohort51] [main] liquibase.ui                             : Liquibase: Update has been successful. Rows affected: 2
+2025-09-30T18:56:25.641+02:00  INFO 26228 --- [shop_cohort51] [main] liquibase.lockservice                    : Successfully released change log lock
+2025-09-30T18:56:25.643+02:00  INFO 26228 --- [shop_cohort51] [main] liquibase.command                        : Command execution complete
+2025-09-30T18:56:26.191+02:00  INFO 26228 --- [shop_cohort51] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-09-30T18:56:26.263+02:00  INFO 26228 --- [shop_cohort51] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.26.Final
+2025-09-30T18:56:26.305+02:00  INFO 26228 --- [shop_cohort51] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-09-30T18:56:26.652+02:00  INFO 26228 --- [shop_cohort51] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-09-30T18:56:26.756+02:00  INFO 26228 --- [shop_cohort51] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
 	Database driver: undefined/unknown
 	Database version: 17.6
@@ -34,52 +517,46 @@
 	Isolation level: undefined/unknown
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2025-09-25T20:00:51.236+02:00  INFO 28956 --- [shop_cohort51] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-09-25T20:00:51.239+02:00  INFO 28956 --- [shop_cohort51] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-09-25T20:00:51.684+02:00  WARN 28956 --- [shop_cohort51] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-09-25T20:00:51.933+02:00  INFO 28956 --- [shop_cohort51] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsServiceImpl
-2025-09-25T20:00:52.425+02:00  INFO 28956 --- [shop_cohort51] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/api'
-2025-09-25T20:00:52.434+02:00  INFO 28956 --- [shop_cohort51] [main] ait.shop.ShopCohort51Application         : Started ShopCohort51Application in 6.816 seconds (process running for 7.583)
-2025-09-25T20:01:31.779+02:00  INFO 28956 --- [shop_cohort51] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-09-25T20:01:31.779+02:00  INFO 28956 --- [shop_cohort51] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-09-25T20:01:31.782+02:00  INFO 28956 --- [shop_cohort51] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
-2025-09-25T20:01:31.840+02:00  INFO 28956 --- [shop_cohort51] [http-nio-8080-exec-2] ait.shop.services.ProductService         : Info level message
-2025-09-25T20:01:31.840+02:00  WARN 28956 --- [shop_cohort51] [http-nio-8080-exec-2] ait.shop.services.ProductService         : Warn level message
-2025-09-25T20:01:31.840+02:00 ERROR 28956 --- [shop_cohort51] [http-nio-8080-exec-2] ait.shop.services.ProductService         : Error level message
-2025-09-25T20:07:52.451+02:00  INFO 28956 --- [shop_cohort51] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2025-09-25T20:07:52.760+02:00  INFO 28956 --- [shop_cohort51] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2025-09-25T20:07:52.764+02:00  INFO 28956 --- [shop_cohort51] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-09-25T20:07:52.767+02:00  INFO 28956 --- [shop_cohort51] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-09-25T20:07:52.772+02:00  INFO 28956 --- [shop_cohort51] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2025-09-25T21:07:09.903+02:00  INFO 26164 --- [shop_cohort51] [main] ait.shop.ShopCohort51Application         : Starting ShopCohort51Application using Java 17.0.16 with PID 26164 (D:\projects\ait_backend\shop_cohort51\target\classes started by ogors in D:\projects\ait_backend\shop_cohort51)
-2025-09-25T21:07:09.907+02:00  INFO 26164 --- [shop_cohort51] [main] ait.shop.ShopCohort51Application         : No active profile set, falling back to 1 default profile: "default"
-2025-09-25T21:07:10.767+02:00  INFO 26164 --- [shop_cohort51] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-09-25T21:07:10.835+02:00  INFO 26164 --- [shop_cohort51] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 57 ms. Found 4 JPA repository interfaces.
-2025-09-25T21:07:11.519+02:00  INFO 26164 --- [shop_cohort51] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2025-09-25T21:07:11.532+02:00  INFO 26164 --- [shop_cohort51] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-09-25T21:07:11.533+02:00  INFO 26164 --- [shop_cohort51] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.44]
-2025-09-25T21:07:11.601+02:00  INFO 26164 --- [shop_cohort51] [main] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring embedded WebApplicationContext
-2025-09-25T21:07:11.602+02:00  INFO 26164 --- [shop_cohort51] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1647 ms
-2025-09-25T21:07:11.796+02:00  INFO 26164 --- [shop_cohort51] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-09-25T21:07:11.947+02:00  INFO 26164 --- [shop_cohort51] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4300e240
-2025-09-25T21:07:11.948+02:00  INFO 26164 --- [shop_cohort51] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-09-25T21:07:12.093+02:00  INFO 26164 --- [shop_cohort51] [main] liquibase.database                       : Set default schema name to public
-2025-09-25T21:07:12.563+02:00  INFO 26164 --- [shop_cohort51] [main] liquibase.changelog                      : Reading from public.databasechangelog
-2025-09-25T21:07:12.723+02:00  INFO 26164 --- [shop_cohort51] [main] liquibase.ui                             : Database is up to date, no changesets to execute
-2025-09-25T21:07:12.726+02:00  INFO 26164 --- [shop_cohort51] [main] liquibase.changelog                      : Reading from public.databasechangelog
-2025-09-25T21:07:12.738+02:00  INFO 26164 --- [shop_cohort51] [main] liquibase.util                           : UPDATE SUMMARY
-2025-09-25T21:07:12.739+02:00  INFO 26164 --- [shop_cohort51] [main] liquibase.util                           : Run:                          0
-2025-09-25T21:07:12.739+02:00  INFO 26164 --- [shop_cohort51] [main] liquibase.util                           : Previously run:              13
-2025-09-25T21:07:12.739+02:00  INFO 26164 --- [shop_cohort51] [main] liquibase.util                           : Filtered out:                 0
-2025-09-25T21:07:12.739+02:00  INFO 26164 --- [shop_cohort51] [main] liquibase.util                           : -------------------------------
-2025-09-25T21:07:12.740+02:00  INFO 26164 --- [shop_cohort51] [main] liquibase.util                           : Total change sets:           13
-2025-09-25T21:07:12.741+02:00  INFO 26164 --- [shop_cohort51] [main] liquibase.util                           : Update summary generated
-2025-09-25T21:07:12.742+02:00  INFO 26164 --- [shop_cohort51] [main] liquibase.command                        : Command execution complete
-2025-09-25T21:07:13.378+02:00  INFO 26164 --- [shop_cohort51] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-09-25T21:07:13.432+02:00  INFO 26164 --- [shop_cohort51] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.26.Final
-2025-09-25T21:07:13.466+02:00  INFO 26164 --- [shop_cohort51] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-09-25T21:07:13.722+02:00  INFO 26164 --- [shop_cohort51] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-09-25T21:07:13.806+02:00  INFO 26164 --- [shop_cohort51] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+2025-09-30T18:56:27.839+02:00  INFO 26228 --- [shop_cohort51] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-09-30T18:56:27.842+02:00  INFO 26228 --- [shop_cohort51] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-09-30T18:56:28.481+02:00  WARN 26228 --- [shop_cohort51] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-09-30T18:56:28.815+02:00  INFO 26228 --- [shop_cohort51] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsServiceImpl
+2025-09-30T18:56:29.528+02:00  INFO 26228 --- [shop_cohort51] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/api'
+2025-09-30T18:56:29.539+02:00  INFO 26228 --- [shop_cohort51] [main] ait.shop.ShopCohort51Application         : Started ShopCohort51Application in 7.993 seconds (process running for 8.853)
+2025-09-30T19:04:37.244+02:00  INFO 26228 --- [shop_cohort51] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-09-30T19:04:37.551+02:00  INFO 26228 --- [shop_cohort51] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-09-30T19:04:37.555+02:00  INFO 26228 --- [shop_cohort51] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-09-30T19:04:37.568+02:00  INFO 26228 --- [shop_cohort51] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-09-30T19:04:37.573+02:00  INFO 26228 --- [shop_cohort51] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-09-30T20:01:54.768+02:00  INFO 18088 --- [shop_cohort51] [main] ait.shop.ShopCohort51Application         : Starting ShopCohort51Application using Java 17.0.16 with PID 18088 (D:\projects\ait_backend\shop_cohort51\target\classes started by ogors in D:\projects\ait_backend\shop_cohort51)
+2025-09-30T20:01:54.772+02:00  INFO 18088 --- [shop_cohort51] [main] ait.shop.ShopCohort51Application         : No active profile set, falling back to 1 default profile: "default"
+2025-09-30T20:01:55.801+02:00  INFO 18088 --- [shop_cohort51] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-09-30T20:01:55.869+02:00  INFO 18088 --- [shop_cohort51] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 59 ms. Found 4 JPA repository interfaces.
+2025-09-30T20:01:56.695+02:00  INFO 18088 --- [shop_cohort51] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-09-30T20:01:56.716+02:00  INFO 18088 --- [shop_cohort51] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-09-30T20:01:56.717+02:00  INFO 18088 --- [shop_cohort51] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.44]
+2025-09-30T20:01:56.813+02:00  INFO 18088 --- [shop_cohort51] [main] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring embedded WebApplicationContext
+2025-09-30T20:01:56.814+02:00  INFO 18088 --- [shop_cohort51] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1986 ms
+2025-09-30T20:01:57.074+02:00  INFO 18088 --- [shop_cohort51] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-09-30T20:01:57.237+02:00  INFO 18088 --- [shop_cohort51] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@619c3546
+2025-09-30T20:01:57.239+02:00  INFO 18088 --- [shop_cohort51] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-09-30T20:01:57.393+02:00  INFO 18088 --- [shop_cohort51] [main] liquibase.database                       : Set default schema name to public
+2025-09-30T20:01:57.882+02:00  INFO 18088 --- [shop_cohort51] [main] liquibase.changelog                      : Reading from public.databasechangelog
+2025-09-30T20:01:58.083+02:00  INFO 18088 --- [shop_cohort51] [main] liquibase.ui                             : Database is up to date, no changesets to execute
+2025-09-30T20:01:58.086+02:00  INFO 18088 --- [shop_cohort51] [main] liquibase.changelog                      : Reading from public.databasechangelog
+2025-09-30T20:01:58.102+02:00  INFO 18088 --- [shop_cohort51] [main] liquibase.util                           : UPDATE SUMMARY
+2025-09-30T20:01:58.103+02:00  INFO 18088 --- [shop_cohort51] [main] liquibase.util                           : Run:                          0
+2025-09-30T20:01:58.103+02:00  INFO 18088 --- [shop_cohort51] [main] liquibase.util                           : Previously run:              17
+2025-09-30T20:01:58.103+02:00  INFO 18088 --- [shop_cohort51] [main] liquibase.util                           : Filtered out:                 0
+2025-09-30T20:01:58.104+02:00  INFO 18088 --- [shop_cohort51] [main] liquibase.util                           : -------------------------------
+2025-09-30T20:01:58.106+02:00  INFO 18088 --- [shop_cohort51] [main] liquibase.util                           : Total change sets:           17
+2025-09-30T20:01:58.107+02:00  INFO 18088 --- [shop_cohort51] [main] liquibase.util                           : Update summary generated
+2025-09-30T20:01:58.108+02:00  INFO 18088 --- [shop_cohort51] [main] liquibase.command                        : Command execution complete
+2025-09-30T20:01:58.717+02:00  INFO 18088 --- [shop_cohort51] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-09-30T20:01:58.767+02:00  INFO 18088 --- [shop_cohort51] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.26.Final
+2025-09-30T20:01:58.800+02:00  INFO 18088 --- [shop_cohort51] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-09-30T20:01:59.080+02:00  INFO 18088 --- [shop_cohort51] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-09-30T20:01:59.170+02:00  INFO 18088 --- [shop_cohort51] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
 	Database driver: undefined/unknown
 	Database version: 17.6
@@ -87,14 +564,656 @@
 	Isolation level: undefined/unknown
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2025-09-25T21:07:14.741+02:00  INFO 26164 --- [shop_cohort51] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-09-25T21:07:14.745+02:00  INFO 26164 --- [shop_cohort51] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-09-25T21:07:15.221+02:00  WARN 26164 --- [shop_cohort51] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-09-25T21:07:15.486+02:00  INFO 26164 --- [shop_cohort51] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsServiceImpl
-2025-09-25T21:07:16.001+02:00  INFO 26164 --- [shop_cohort51] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/api'
-2025-09-25T21:07:16.010+02:00  INFO 26164 --- [shop_cohort51] [main] ait.shop.ShopCohort51Application         : Started ShopCohort51Application in 6.715 seconds (process running for 7.48)
-2025-09-25T21:31:23.777+02:00  INFO 26164 --- [shop_cohort51] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2025-09-25T21:31:24.091+02:00  INFO 26164 --- [shop_cohort51] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2025-09-25T21:31:24.096+02:00  INFO 26164 --- [shop_cohort51] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-09-25T21:31:24.098+02:00  INFO 26164 --- [shop_cohort51] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-09-25T21:31:24.102+02:00  INFO 26164 --- [shop_cohort51] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-09-30T20:01:59.382+02:00 ERROR 18088 --- [shop_cohort51] [main] j.LocalContainerEntityManagerFactoryBean : Failed to initialize JPA EntityManagerFactory: Could not determine recommended JdbcType for Java type 'ait.shop.model.entity.Cart'
+2025-09-30T20:01:59.383+02:00  WARN 18088 --- [shop_cohort51] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Could not determine recommended JdbcType for Java type 'ait.shop.model.entity.Cart'
+2025-09-30T20:01:59.383+02:00  INFO 18088 --- [shop_cohort51] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-09-30T20:01:59.390+02:00  INFO 18088 --- [shop_cohort51] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-09-30T20:01:59.395+02:00  INFO 18088 --- [shop_cohort51] [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2025-09-30T20:01:59.405+02:00  INFO 18088 --- [shop_cohort51] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-09-30T20:01:59.420+02:00 ERROR 18088 --- [shop_cohort51] [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Could not determine recommended JdbcType for Java type 'ait.shop.model.entity.Cart'
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1826) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:607) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:970) ~[spring-context-6.2.10.jar:6.2.10]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.10.jar:6.2.10]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.5.5.jar:3.5.5]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.5.5.jar:3.5.5]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.5.5.jar:3.5.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.5.5.jar:3.5.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.5.5.jar:3.5.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.5.5.jar:3.5.5]
+	at ait.shop.ShopCohort51Application.main(ShopCohort51Application.java:10) ~[classes/:na]
+Caused by: org.hibernate.type.descriptor.java.spi.JdbcTypeRecommendationException: Could not determine recommended JdbcType for Java type 'ait.shop.model.entity.Cart'
+	at org.hibernate.type.descriptor.java.spi.UnknownBasicJavaType.getRecommendedJdbcType(UnknownBasicJavaType.java:50) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.boot.model.process.internal.InferredBasicValueResolver.from(InferredBasicValueResolver.java:195) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.mapping.BasicValue.resolution(BasicValue.java:664) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.mapping.BasicValue.buildResolution(BasicValue.java:461) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.mapping.BasicValue.resolve(BasicValue.java:351) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.mapping.BasicValue.resolve(BasicValue.java:341) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.lambda$processValueResolvers$6(InFlightMetadataCollectorImpl.java:1827) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at java.base/java.util.ArrayList.removeIf(ArrayList.java:1682) ~[na:na]
+	at java.base/java.util.ArrayList.removeIf(ArrayList.java:1660) ~[na:na]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processValueResolvers(InFlightMetadataCollectorImpl.java:1826) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processSecondPasses(InFlightMetadataCollectorImpl.java:1812) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:334) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1442) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1513) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:66) ~[spring-orm-6.2.10.jar:6.2.10]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390) ~[spring-orm-6.2.10.jar:6.2.10]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:419) ~[spring-orm-6.2.10.jar:6.2.10]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:400) ~[spring-orm-6.2.10.jar:6.2.10]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366) ~[spring-orm-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1873) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1822) ~[spring-beans-6.2.10.jar:6.2.10]
+	... 15 common frames omitted
+
+2025-09-30T20:03:54.910+02:00  INFO 14292 --- [shop_cohort51] [main] ait.shop.ShopCohort51Application         : Starting ShopCohort51Application using Java 17.0.16 with PID 14292 (D:\projects\ait_backend\shop_cohort51\target\classes started by ogors in D:\projects\ait_backend\shop_cohort51)
+2025-09-30T20:03:54.912+02:00  INFO 14292 --- [shop_cohort51] [main] ait.shop.ShopCohort51Application         : No active profile set, falling back to 1 default profile: "default"
+2025-09-30T20:03:55.844+02:00  INFO 14292 --- [shop_cohort51] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-09-30T20:03:55.913+02:00  INFO 14292 --- [shop_cohort51] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 58 ms. Found 4 JPA repository interfaces.
+2025-09-30T20:03:56.668+02:00  INFO 14292 --- [shop_cohort51] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-09-30T20:03:56.682+02:00  INFO 14292 --- [shop_cohort51] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-09-30T20:03:56.684+02:00  INFO 14292 --- [shop_cohort51] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.44]
+2025-09-30T20:03:56.768+02:00  INFO 14292 --- [shop_cohort51] [main] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring embedded WebApplicationContext
+2025-09-30T20:03:56.768+02:00  INFO 14292 --- [shop_cohort51] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1805 ms
+2025-09-30T20:03:56.997+02:00  INFO 14292 --- [shop_cohort51] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-09-30T20:03:57.154+02:00  INFO 14292 --- [shop_cohort51] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1bb96449
+2025-09-30T20:03:57.156+02:00  INFO 14292 --- [shop_cohort51] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-09-30T20:03:57.324+02:00  INFO 14292 --- [shop_cohort51] [main] liquibase.database                       : Set default schema name to public
+2025-09-30T20:03:57.791+02:00  INFO 14292 --- [shop_cohort51] [main] liquibase.changelog                      : Reading from public.databasechangelog
+2025-09-30T20:03:57.975+02:00  INFO 14292 --- [shop_cohort51] [main] liquibase.ui                             : Database is up to date, no changesets to execute
+2025-09-30T20:03:57.979+02:00  INFO 14292 --- [shop_cohort51] [main] liquibase.changelog                      : Reading from public.databasechangelog
+2025-09-30T20:03:57.990+02:00  INFO 14292 --- [shop_cohort51] [main] liquibase.util                           : UPDATE SUMMARY
+2025-09-30T20:03:57.991+02:00  INFO 14292 --- [shop_cohort51] [main] liquibase.util                           : Run:                          0
+2025-09-30T20:03:57.991+02:00  INFO 14292 --- [shop_cohort51] [main] liquibase.util                           : Previously run:              17
+2025-09-30T20:03:57.991+02:00  INFO 14292 --- [shop_cohort51] [main] liquibase.util                           : Filtered out:                 0
+2025-09-30T20:03:57.992+02:00  INFO 14292 --- [shop_cohort51] [main] liquibase.util                           : -------------------------------
+2025-09-30T20:03:57.992+02:00  INFO 14292 --- [shop_cohort51] [main] liquibase.util                           : Total change sets:           17
+2025-09-30T20:03:57.992+02:00  INFO 14292 --- [shop_cohort51] [main] liquibase.util                           : Update summary generated
+2025-09-30T20:03:57.993+02:00  INFO 14292 --- [shop_cohort51] [main] liquibase.command                        : Command execution complete
+2025-09-30T20:03:58.590+02:00  INFO 14292 --- [shop_cohort51] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-09-30T20:03:58.637+02:00  INFO 14292 --- [shop_cohort51] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.26.Final
+2025-09-30T20:03:58.670+02:00  INFO 14292 --- [shop_cohort51] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-09-30T20:03:58.937+02:00  INFO 14292 --- [shop_cohort51] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-09-30T20:03:59.039+02:00  INFO 14292 --- [shop_cohort51] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.6
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-09-30T20:03:59.255+02:00 ERROR 14292 --- [shop_cohort51] [main] j.LocalContainerEntityManagerFactoryBean : Failed to initialize JPA EntityManagerFactory: Could not determine recommended JdbcType for Java type 'ait.shop.model.entity.Cart'
+2025-09-30T20:03:59.256+02:00  WARN 14292 --- [shop_cohort51] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Could not determine recommended JdbcType for Java type 'ait.shop.model.entity.Cart'
+2025-09-30T20:03:59.256+02:00  INFO 14292 --- [shop_cohort51] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-09-30T20:03:59.261+02:00  INFO 14292 --- [shop_cohort51] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-09-30T20:03:59.268+02:00  INFO 14292 --- [shop_cohort51] [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2025-09-30T20:03:59.283+02:00  INFO 14292 --- [shop_cohort51] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-09-30T20:03:59.300+02:00 ERROR 14292 --- [shop_cohort51] [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Could not determine recommended JdbcType for Java type 'ait.shop.model.entity.Cart'
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1826) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:607) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:970) ~[spring-context-6.2.10.jar:6.2.10]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.10.jar:6.2.10]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.5.5.jar:3.5.5]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.5.5.jar:3.5.5]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.5.5.jar:3.5.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.5.5.jar:3.5.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.5.5.jar:3.5.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.5.5.jar:3.5.5]
+	at ait.shop.ShopCohort51Application.main(ShopCohort51Application.java:10) ~[classes/:na]
+Caused by: org.hibernate.type.descriptor.java.spi.JdbcTypeRecommendationException: Could not determine recommended JdbcType for Java type 'ait.shop.model.entity.Cart'
+	at org.hibernate.type.descriptor.java.spi.UnknownBasicJavaType.getRecommendedJdbcType(UnknownBasicJavaType.java:50) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.boot.model.process.internal.InferredBasicValueResolver.from(InferredBasicValueResolver.java:195) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.mapping.BasicValue.resolution(BasicValue.java:664) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.mapping.BasicValue.buildResolution(BasicValue.java:461) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.mapping.BasicValue.resolve(BasicValue.java:351) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.mapping.BasicValue.resolve(BasicValue.java:341) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.lambda$processValueResolvers$6(InFlightMetadataCollectorImpl.java:1827) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at java.base/java.util.ArrayList.removeIf(ArrayList.java:1682) ~[na:na]
+	at java.base/java.util.ArrayList.removeIf(ArrayList.java:1660) ~[na:na]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processValueResolvers(InFlightMetadataCollectorImpl.java:1826) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processSecondPasses(InFlightMetadataCollectorImpl.java:1812) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:334) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1442) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1513) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:66) ~[spring-orm-6.2.10.jar:6.2.10]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390) ~[spring-orm-6.2.10.jar:6.2.10]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:419) ~[spring-orm-6.2.10.jar:6.2.10]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:400) ~[spring-orm-6.2.10.jar:6.2.10]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366) ~[spring-orm-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1873) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1822) ~[spring-beans-6.2.10.jar:6.2.10]
+	... 15 common frames omitted
+
+2025-09-30T20:07:17.018+02:00  INFO 29684 --- [shop_cohort51] [main] ait.shop.ShopCohort51Application         : Starting ShopCohort51Application using Java 17.0.16 with PID 29684 (D:\projects\ait_backend\shop_cohort51\target\classes started by ogors in D:\projects\ait_backend\shop_cohort51)
+2025-09-30T20:07:17.020+02:00  INFO 29684 --- [shop_cohort51] [main] ait.shop.ShopCohort51Application         : No active profile set, falling back to 1 default profile: "default"
+2025-09-30T20:07:17.945+02:00  INFO 29684 --- [shop_cohort51] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-09-30T20:07:18.008+02:00  INFO 29684 --- [shop_cohort51] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 53 ms. Found 4 JPA repository interfaces.
+2025-09-30T20:07:18.969+02:00  INFO 29684 --- [shop_cohort51] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-09-30T20:07:18.986+02:00  INFO 29684 --- [shop_cohort51] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-09-30T20:07:18.987+02:00  INFO 29684 --- [shop_cohort51] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.44]
+2025-09-30T20:07:19.069+02:00  INFO 29684 --- [shop_cohort51] [main] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring embedded WebApplicationContext
+2025-09-30T20:07:19.070+02:00  INFO 29684 --- [shop_cohort51] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1993 ms
+2025-09-30T20:07:19.287+02:00  INFO 29684 --- [shop_cohort51] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-09-30T20:07:19.433+02:00  INFO 29684 --- [shop_cohort51] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@7f8c48f3
+2025-09-30T20:07:19.435+02:00  INFO 29684 --- [shop_cohort51] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-09-30T20:07:19.571+02:00  INFO 29684 --- [shop_cohort51] [main] liquibase.database                       : Set default schema name to public
+2025-09-30T20:07:20.053+02:00  INFO 29684 --- [shop_cohort51] [main] liquibase.changelog                      : Reading from public.databasechangelog
+2025-09-30T20:07:20.257+02:00  INFO 29684 --- [shop_cohort51] [main] liquibase.ui                             : Database is up to date, no changesets to execute
+2025-09-30T20:07:20.260+02:00  INFO 29684 --- [shop_cohort51] [main] liquibase.changelog                      : Reading from public.databasechangelog
+2025-09-30T20:07:20.277+02:00  INFO 29684 --- [shop_cohort51] [main] liquibase.util                           : UPDATE SUMMARY
+2025-09-30T20:07:20.277+02:00  INFO 29684 --- [shop_cohort51] [main] liquibase.util                           : Run:                          0
+2025-09-30T20:07:20.277+02:00  INFO 29684 --- [shop_cohort51] [main] liquibase.util                           : Previously run:              17
+2025-09-30T20:07:20.277+02:00  INFO 29684 --- [shop_cohort51] [main] liquibase.util                           : Filtered out:                 0
+2025-09-30T20:07:20.278+02:00  INFO 29684 --- [shop_cohort51] [main] liquibase.util                           : -------------------------------
+2025-09-30T20:07:20.278+02:00  INFO 29684 --- [shop_cohort51] [main] liquibase.util                           : Total change sets:           17
+2025-09-30T20:07:20.279+02:00  INFO 29684 --- [shop_cohort51] [main] liquibase.util                           : Update summary generated
+2025-09-30T20:07:20.280+02:00  INFO 29684 --- [shop_cohort51] [main] liquibase.command                        : Command execution complete
+2025-09-30T20:07:20.780+02:00  INFO 29684 --- [shop_cohort51] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-09-30T20:07:20.823+02:00  INFO 29684 --- [shop_cohort51] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.26.Final
+2025-09-30T20:07:20.854+02:00  INFO 29684 --- [shop_cohort51] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-09-30T20:07:21.154+02:00  INFO 29684 --- [shop_cohort51] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-09-30T20:07:21.263+02:00  INFO 29684 --- [shop_cohort51] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.6
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-09-30T20:07:21.487+02:00 ERROR 29684 --- [shop_cohort51] [main] j.LocalContainerEntityManagerFactoryBean : Failed to initialize JPA EntityManagerFactory: Could not determine recommended JdbcType for Java type 'ait.shop.model.entity.Cart'
+2025-09-30T20:07:21.488+02:00  WARN 29684 --- [shop_cohort51] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Could not determine recommended JdbcType for Java type 'ait.shop.model.entity.Cart'
+2025-09-30T20:07:21.488+02:00  INFO 29684 --- [shop_cohort51] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-09-30T20:07:21.493+02:00  INFO 29684 --- [shop_cohort51] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-09-30T20:07:21.502+02:00  INFO 29684 --- [shop_cohort51] [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2025-09-30T20:07:21.518+02:00  INFO 29684 --- [shop_cohort51] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-09-30T20:07:21.531+02:00 ERROR 29684 --- [shop_cohort51] [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Could not determine recommended JdbcType for Java type 'ait.shop.model.entity.Cart'
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1826) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:607) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:970) ~[spring-context-6.2.10.jar:6.2.10]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.10.jar:6.2.10]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.5.5.jar:3.5.5]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.5.5.jar:3.5.5]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.5.5.jar:3.5.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.5.5.jar:3.5.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.5.5.jar:3.5.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.5.5.jar:3.5.5]
+	at ait.shop.ShopCohort51Application.main(ShopCohort51Application.java:10) ~[classes/:na]
+Caused by: org.hibernate.type.descriptor.java.spi.JdbcTypeRecommendationException: Could not determine recommended JdbcType for Java type 'ait.shop.model.entity.Cart'
+	at org.hibernate.type.descriptor.java.spi.UnknownBasicJavaType.getRecommendedJdbcType(UnknownBasicJavaType.java:50) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.boot.model.process.internal.InferredBasicValueResolver.from(InferredBasicValueResolver.java:195) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.mapping.BasicValue.resolution(BasicValue.java:664) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.mapping.BasicValue.buildResolution(BasicValue.java:461) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.mapping.BasicValue.resolve(BasicValue.java:351) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.mapping.BasicValue.resolve(BasicValue.java:341) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.lambda$processValueResolvers$6(InFlightMetadataCollectorImpl.java:1827) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at java.base/java.util.ArrayList.removeIf(ArrayList.java:1682) ~[na:na]
+	at java.base/java.util.ArrayList.removeIf(ArrayList.java:1660) ~[na:na]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processValueResolvers(InFlightMetadataCollectorImpl.java:1826) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processSecondPasses(InFlightMetadataCollectorImpl.java:1812) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:334) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1442) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1513) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:66) ~[spring-orm-6.2.10.jar:6.2.10]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390) ~[spring-orm-6.2.10.jar:6.2.10]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:419) ~[spring-orm-6.2.10.jar:6.2.10]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:400) ~[spring-orm-6.2.10.jar:6.2.10]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366) ~[spring-orm-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1873) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1822) ~[spring-beans-6.2.10.jar:6.2.10]
+	... 15 common frames omitted
+
+2025-09-30T20:08:55.752+02:00  INFO 36608 --- [shop_cohort51] [main] ait.shop.ShopCohort51Application         : Starting ShopCohort51Application using Java 17.0.16 with PID 36608 (D:\projects\ait_backend\shop_cohort51\target\classes started by ogors in D:\projects\ait_backend\shop_cohort51)
+2025-09-30T20:08:55.754+02:00  INFO 36608 --- [shop_cohort51] [main] ait.shop.ShopCohort51Application         : No active profile set, falling back to 1 default profile: "default"
+2025-09-30T20:08:56.760+02:00  INFO 36608 --- [shop_cohort51] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-09-30T20:08:56.824+02:00  INFO 36608 --- [shop_cohort51] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 54 ms. Found 4 JPA repository interfaces.
+2025-09-30T20:08:57.543+02:00  INFO 36608 --- [shop_cohort51] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-09-30T20:08:57.555+02:00  INFO 36608 --- [shop_cohort51] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-09-30T20:08:57.556+02:00  INFO 36608 --- [shop_cohort51] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.44]
+2025-09-30T20:08:57.632+02:00  INFO 36608 --- [shop_cohort51] [main] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring embedded WebApplicationContext
+2025-09-30T20:08:57.633+02:00  INFO 36608 --- [shop_cohort51] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1828 ms
+2025-09-30T20:08:57.824+02:00  INFO 36608 --- [shop_cohort51] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-09-30T20:08:57.971+02:00  INFO 36608 --- [shop_cohort51] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6cceb281
+2025-09-30T20:08:57.973+02:00  INFO 36608 --- [shop_cohort51] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-09-30T20:08:58.116+02:00  INFO 36608 --- [shop_cohort51] [main] liquibase.database                       : Set default schema name to public
+2025-09-30T20:08:58.583+02:00  INFO 36608 --- [shop_cohort51] [main] liquibase.changelog                      : Reading from public.databasechangelog
+2025-09-30T20:08:58.799+02:00  INFO 36608 --- [shop_cohort51] [main] liquibase.ui                             : Database is up to date, no changesets to execute
+2025-09-30T20:08:58.802+02:00  INFO 36608 --- [shop_cohort51] [main] liquibase.changelog                      : Reading from public.databasechangelog
+2025-09-30T20:08:58.814+02:00  INFO 36608 --- [shop_cohort51] [main] liquibase.util                           : UPDATE SUMMARY
+2025-09-30T20:08:58.815+02:00  INFO 36608 --- [shop_cohort51] [main] liquibase.util                           : Run:                          0
+2025-09-30T20:08:58.815+02:00  INFO 36608 --- [shop_cohort51] [main] liquibase.util                           : Previously run:              17
+2025-09-30T20:08:58.815+02:00  INFO 36608 --- [shop_cohort51] [main] liquibase.util                           : Filtered out:                 0
+2025-09-30T20:08:58.815+02:00  INFO 36608 --- [shop_cohort51] [main] liquibase.util                           : -------------------------------
+2025-09-30T20:08:58.815+02:00  INFO 36608 --- [shop_cohort51] [main] liquibase.util                           : Total change sets:           17
+2025-09-30T20:08:58.817+02:00  INFO 36608 --- [shop_cohort51] [main] liquibase.util                           : Update summary generated
+2025-09-30T20:08:58.817+02:00  INFO 36608 --- [shop_cohort51] [main] liquibase.command                        : Command execution complete
+2025-09-30T20:08:59.398+02:00  INFO 36608 --- [shop_cohort51] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-09-30T20:08:59.442+02:00  INFO 36608 --- [shop_cohort51] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.26.Final
+2025-09-30T20:08:59.473+02:00  INFO 36608 --- [shop_cohort51] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-09-30T20:08:59.715+02:00  INFO 36608 --- [shop_cohort51] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-09-30T20:08:59.805+02:00  INFO 36608 --- [shop_cohort51] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.6
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-09-30T20:09:00.803+02:00  INFO 36608 --- [shop_cohort51] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-09-30T20:09:00.806+02:00  INFO 36608 --- [shop_cohort51] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-09-30T20:09:01.419+02:00  WARN 36608 --- [shop_cohort51] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-09-30T20:09:01.768+02:00  INFO 36608 --- [shop_cohort51] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsServiceImpl
+2025-09-30T20:09:02.406+02:00  INFO 36608 --- [shop_cohort51] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/api'
+2025-09-30T20:09:02.415+02:00  INFO 36608 --- [shop_cohort51] [main] ait.shop.ShopCohort51Application         : Started ShopCohort51Application in 7.251 seconds (process running for 7.966)
+2025-09-30T20:09:27.776+02:00  INFO 36608 --- [shop_cohort51] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-09-30T20:09:28.101+02:00  INFO 36608 --- [shop_cohort51] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-09-30T20:09:28.105+02:00  INFO 36608 --- [shop_cohort51] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-09-30T20:09:28.108+02:00  INFO 36608 --- [shop_cohort51] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-09-30T20:09:28.113+02:00  INFO 36608 --- [shop_cohort51] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-09-30T20:09:33.767+02:00  INFO 2228 --- [shop_cohort51] [main] ait.shop.ShopCohort51Application         : Starting ShopCohort51Application using Java 17.0.16 with PID 2228 (D:\projects\ait_backend\shop_cohort51\target\classes started by ogors in D:\projects\ait_backend\shop_cohort51)
+2025-09-30T20:09:33.770+02:00  INFO 2228 --- [shop_cohort51] [main] ait.shop.ShopCohort51Application         : No active profile set, falling back to 1 default profile: "default"
+2025-09-30T20:09:34.692+02:00  INFO 2228 --- [shop_cohort51] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-09-30T20:09:34.763+02:00  INFO 2228 --- [shop_cohort51] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 59 ms. Found 4 JPA repository interfaces.
+2025-09-30T20:09:35.512+02:00  INFO 2228 --- [shop_cohort51] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-09-30T20:09:35.525+02:00  INFO 2228 --- [shop_cohort51] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-09-30T20:09:35.526+02:00  INFO 2228 --- [shop_cohort51] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.44]
+2025-09-30T20:09:35.608+02:00  INFO 2228 --- [shop_cohort51] [main] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring embedded WebApplicationContext
+2025-09-30T20:09:35.608+02:00  INFO 2228 --- [shop_cohort51] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1791 ms
+2025-09-30T20:09:35.815+02:00  INFO 2228 --- [shop_cohort51] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-09-30T20:09:35.972+02:00  INFO 2228 --- [shop_cohort51] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@a9e8da1
+2025-09-30T20:09:35.975+02:00  INFO 2228 --- [shop_cohort51] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-09-30T20:09:36.140+02:00  INFO 2228 --- [shop_cohort51] [main] liquibase.database                       : Set default schema name to public
+2025-09-30T20:09:36.577+02:00  INFO 2228 --- [shop_cohort51] [main] liquibase.changelog                      : Reading from public.databasechangelog
+2025-09-30T20:09:36.770+02:00  INFO 2228 --- [shop_cohort51] [main] liquibase.ui                             : Database is up to date, no changesets to execute
+2025-09-30T20:09:36.773+02:00  INFO 2228 --- [shop_cohort51] [main] liquibase.changelog                      : Reading from public.databasechangelog
+2025-09-30T20:09:36.786+02:00  INFO 2228 --- [shop_cohort51] [main] liquibase.util                           : UPDATE SUMMARY
+2025-09-30T20:09:36.787+02:00  INFO 2228 --- [shop_cohort51] [main] liquibase.util                           : Run:                          0
+2025-09-30T20:09:36.787+02:00  INFO 2228 --- [shop_cohort51] [main] liquibase.util                           : Previously run:              17
+2025-09-30T20:09:36.787+02:00  INFO 2228 --- [shop_cohort51] [main] liquibase.util                           : Filtered out:                 0
+2025-09-30T20:09:36.787+02:00  INFO 2228 --- [shop_cohort51] [main] liquibase.util                           : -------------------------------
+2025-09-30T20:09:36.787+02:00  INFO 2228 --- [shop_cohort51] [main] liquibase.util                           : Total change sets:           17
+2025-09-30T20:09:36.789+02:00  INFO 2228 --- [shop_cohort51] [main] liquibase.util                           : Update summary generated
+2025-09-30T20:09:36.791+02:00  INFO 2228 --- [shop_cohort51] [main] liquibase.command                        : Command execution complete
+2025-09-30T20:09:37.270+02:00  INFO 2228 --- [shop_cohort51] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-09-30T20:09:37.318+02:00  INFO 2228 --- [shop_cohort51] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.26.Final
+2025-09-30T20:09:37.351+02:00  INFO 2228 --- [shop_cohort51] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-09-30T20:09:37.614+02:00  INFO 2228 --- [shop_cohort51] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-09-30T20:09:37.713+02:00  INFO 2228 --- [shop_cohort51] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.6
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-09-30T20:09:38.628+02:00  INFO 2228 --- [shop_cohort51] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-09-30T20:09:38.631+02:00  INFO 2228 --- [shop_cohort51] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-09-30T20:09:39.209+02:00  WARN 2228 --- [shop_cohort51] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-09-30T20:09:39.531+02:00  INFO 2228 --- [shop_cohort51] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsServiceImpl
+2025-09-30T20:09:40.156+02:00  INFO 2228 --- [shop_cohort51] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/api'
+2025-09-30T20:09:40.167+02:00  INFO 2228 --- [shop_cohort51] [main] ait.shop.ShopCohort51Application         : Started ShopCohort51Application in 7.004 seconds (process running for 7.736)
+2025-09-30T20:25:17.377+02:00  INFO 2228 --- [shop_cohort51] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-09-30T20:25:17.712+02:00  INFO 2228 --- [shop_cohort51] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-09-30T20:25:17.717+02:00  INFO 2228 --- [shop_cohort51] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-09-30T20:25:17.719+02:00  INFO 2228 --- [shop_cohort51] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-09-30T20:25:17.724+02:00  INFO 2228 --- [shop_cohort51] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-09-30T20:55:39.806+02:00  INFO 13628 --- [shop_cohort51] [main] ait.shop.ShopCohort51Application         : Starting ShopCohort51Application using Java 17.0.16 with PID 13628 (D:\projects\ait_backend\shop_cohort51\target\classes started by ogors in D:\projects\ait_backend\shop_cohort51)
+2025-09-30T20:55:39.809+02:00  INFO 13628 --- [shop_cohort51] [main] ait.shop.ShopCohort51Application         : No active profile set, falling back to 1 default profile: "default"
+2025-09-30T20:55:40.889+02:00  INFO 13628 --- [shop_cohort51] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-09-30T20:55:40.967+02:00  INFO 13628 --- [shop_cohort51] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 66 ms. Found 4 JPA repository interfaces.
+2025-09-30T20:55:41.710+02:00  INFO 13628 --- [shop_cohort51] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-09-30T20:55:41.803+02:00  INFO 13628 --- [shop_cohort51] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1950 ms
+2025-09-30T20:55:41.979+02:00  INFO 13628 --- [shop_cohort51] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-09-30T20:55:42.127+02:00  INFO 13628 --- [shop_cohort51] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@d28c214
+2025-09-30T20:55:42.128+02:00  INFO 13628 --- [shop_cohort51] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-09-30T20:55:43.560+02:00  INFO 13628 --- [shop_cohort51] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-09-30T20:55:43.609+02:00  INFO 13628 --- [shop_cohort51] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.26.Final
+2025-09-30T20:55:43.642+02:00  INFO 13628 --- [shop_cohort51] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-09-30T20:55:43.911+02:00  INFO 13628 --- [shop_cohort51] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-09-30T20:55:44.002+02:00  INFO 13628 --- [shop_cohort51] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.6
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-09-30T20:55:45.014+02:00  INFO 13628 --- [shop_cohort51] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-09-30T20:55:45.017+02:00  INFO 13628 --- [shop_cohort51] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-09-30T20:55:45.600+02:00  WARN 13628 --- [shop_cohort51] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-09-30T20:55:45.905+02:00  INFO 13628 --- [shop_cohort51] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsServiceImpl
+2025-09-30T20:55:46.557+02:00  INFO 13628 --- [shop_cohort51] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/api'
+2025-09-30T20:55:46.569+02:00  INFO 13628 --- [shop_cohort51] [main] ait.shop.ShopCohort51Application         : Started ShopCohort51Application in 7.386 seconds (process running for 8.143)
+2025-09-30T20:55:46.571+02:00  INFO 13628 --- [shop_cohort51] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-09-30T20:55:46.899+02:00  INFO 13628 --- [shop_cohort51] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-09-30T20:55:46.903+02:00  INFO 13628 --- [shop_cohort51] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-09-30T20:55:46.907+02:00  INFO 13628 --- [shop_cohort51] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-09-30T20:55:46.916+02:00  INFO 13628 --- [shop_cohort51] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-09-30T20:56:10.642+02:00  INFO 19384 --- [shop_cohort51] [main] ait.shop.ShopCohort51Application         : Starting ShopCohort51Application using Java 17.0.16 with PID 19384 (D:\projects\ait_backend\shop_cohort51\target\classes started by ogors in D:\projects\ait_backend\shop_cohort51)
+2025-09-30T20:56:10.647+02:00  INFO 19384 --- [shop_cohort51] [main] ait.shop.ShopCohort51Application         : No active profile set, falling back to 1 default profile: "default"
+2025-09-30T20:56:11.731+02:00  INFO 19384 --- [shop_cohort51] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-09-30T20:56:11.840+02:00  INFO 19384 --- [shop_cohort51] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 96 ms. Found 4 JPA repository interfaces.
+2025-09-30T20:56:12.751+02:00  INFO 19384 --- [shop_cohort51] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-09-30T20:56:12.769+02:00  INFO 19384 --- [shop_cohort51] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-09-30T20:56:12.770+02:00  INFO 19384 --- [shop_cohort51] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.44]
+2025-09-30T20:56:12.852+02:00  INFO 19384 --- [shop_cohort51] [main] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring embedded WebApplicationContext
+2025-09-30T20:56:12.853+02:00  INFO 19384 --- [shop_cohort51] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2147 ms
+2025-09-30T20:56:13.096+02:00  INFO 19384 --- [shop_cohort51] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-09-30T20:56:13.265+02:00  INFO 19384 --- [shop_cohort51] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@770cae59
+2025-09-30T20:56:13.267+02:00  INFO 19384 --- [shop_cohort51] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-09-30T20:56:13.428+02:00  INFO 19384 --- [shop_cohort51] [main] liquibase.database                       : Set default schema name to public
+2025-09-30T20:56:14.005+02:00  INFO 19384 --- [shop_cohort51] [main] liquibase.changelog                      : Reading from public.databasechangelog
+2025-09-30T20:56:14.244+02:00  INFO 19384 --- [shop_cohort51] [main] liquibase.ui                             : Database is up to date, no changesets to execute
+2025-09-30T20:56:14.247+02:00  INFO 19384 --- [shop_cohort51] [main] liquibase.changelog                      : Reading from public.databasechangelog
+2025-09-30T20:56:14.266+02:00  INFO 19384 --- [shop_cohort51] [main] liquibase.util                           : UPDATE SUMMARY
+2025-09-30T20:56:14.267+02:00  INFO 19384 --- [shop_cohort51] [main] liquibase.util                           : Run:                          0
+2025-09-30T20:56:14.267+02:00  INFO 19384 --- [shop_cohort51] [main] liquibase.util                           : Previously run:              17
+2025-09-30T20:56:14.267+02:00  INFO 19384 --- [shop_cohort51] [main] liquibase.util                           : Filtered out:                 0
+2025-09-30T20:56:14.267+02:00  INFO 19384 --- [shop_cohort51] [main] liquibase.util                           : -------------------------------
+2025-09-30T20:56:14.268+02:00  INFO 19384 --- [shop_cohort51] [main] liquibase.util                           : Total change sets:           17
+2025-09-30T20:56:14.269+02:00  INFO 19384 --- [shop_cohort51] [main] liquibase.util                           : Update summary generated
+2025-09-30T20:56:14.270+02:00  INFO 19384 --- [shop_cohort51] [main] liquibase.command                        : Command execution complete
+2025-09-30T20:56:14.872+02:00  INFO 19384 --- [shop_cohort51] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-09-30T20:56:14.957+02:00  INFO 19384 --- [shop_cohort51] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.26.Final
+2025-09-30T20:56:15.005+02:00  INFO 19384 --- [shop_cohort51] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-09-30T20:56:15.331+02:00  INFO 19384 --- [shop_cohort51] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-09-30T20:56:15.430+02:00  INFO 19384 --- [shop_cohort51] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.6
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-09-30T20:56:16.697+02:00  INFO 19384 --- [shop_cohort51] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-09-30T20:56:16.702+02:00  INFO 19384 --- [shop_cohort51] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-09-30T20:56:17.382+02:00  WARN 19384 --- [shop_cohort51] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-09-30T20:56:17.754+02:00  INFO 19384 --- [shop_cohort51] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsServiceImpl
+2025-09-30T21:00:08.778+02:00  WARN 19384 --- [shop_cohort51] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=3m55s398ms626µs900ns).
+2025-09-30T21:00:09.681+02:00  INFO 19384 --- [shop_cohort51] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/api'
+2025-09-30T21:00:09.692+02:00  INFO 19384 --- [shop_cohort51] [main] ait.shop.ShopCohort51Application         : Started ShopCohort51Application in 239.81 seconds (process running for 241.347)
+2025-09-30T21:00:09.695+02:00  INFO 19384 --- [shop_cohort51] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-09-30T21:00:10.037+02:00  INFO 19384 --- [shop_cohort51] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-09-30T21:00:10.041+02:00  INFO 19384 --- [shop_cohort51] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-09-30T21:00:10.043+02:00  INFO 19384 --- [shop_cohort51] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-09-30T21:00:10.051+02:00  INFO 19384 --- [shop_cohort51] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-09-30T21:00:14.441+02:00  INFO 31616 --- [shop_cohort51] [main] ait.shop.ShopCohort51Application         : Starting ShopCohort51Application using Java 17.0.16 with PID 31616 (D:\projects\ait_backend\shop_cohort51\target\classes started by ogors in D:\projects\ait_backend\shop_cohort51)
+2025-09-30T21:00:14.444+02:00  INFO 31616 --- [shop_cohort51] [main] ait.shop.ShopCohort51Application         : No active profile set, falling back to 1 default profile: "default"
+2025-09-30T21:00:15.439+02:00  INFO 31616 --- [shop_cohort51] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-09-30T21:00:15.508+02:00  INFO 31616 --- [shop_cohort51] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 60 ms. Found 4 JPA repository interfaces.
+2025-09-30T21:00:16.324+02:00  INFO 31616 --- [shop_cohort51] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-09-30T21:00:16.339+02:00  INFO 31616 --- [shop_cohort51] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-09-30T21:00:16.339+02:00  INFO 31616 --- [shop_cohort51] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.44]
+2025-09-30T21:00:16.418+02:00  INFO 31616 --- [shop_cohort51] [main] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring embedded WebApplicationContext
+2025-09-30T21:00:16.419+02:00  INFO 31616 --- [shop_cohort51] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1925 ms
+2025-09-30T21:00:16.626+02:00  INFO 31616 --- [shop_cohort51] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-09-30T21:00:16.778+02:00  INFO 31616 --- [shop_cohort51] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@d28c214
+2025-09-30T21:00:16.781+02:00  INFO 31616 --- [shop_cohort51] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-09-30T21:00:16.913+02:00  INFO 31616 --- [shop_cohort51] [main] liquibase.database                       : Set default schema name to public
+2025-09-30T21:00:17.390+02:00  INFO 31616 --- [shop_cohort51] [main] liquibase.changelog                      : Reading from public.databasechangelog
+2025-09-30T21:00:17.642+02:00  INFO 31616 --- [shop_cohort51] [main] liquibase.ui                             : Database is up to date, no changesets to execute
+2025-09-30T21:00:17.645+02:00  INFO 31616 --- [shop_cohort51] [main] liquibase.changelog                      : Reading from public.databasechangelog
+2025-09-30T21:00:17.664+02:00  INFO 31616 --- [shop_cohort51] [main] liquibase.util                           : UPDATE SUMMARY
+2025-09-30T21:00:17.665+02:00  INFO 31616 --- [shop_cohort51] [main] liquibase.util                           : Run:                          0
+2025-09-30T21:00:17.665+02:00  INFO 31616 --- [shop_cohort51] [main] liquibase.util                           : Previously run:              17
+2025-09-30T21:00:17.665+02:00  INFO 31616 --- [shop_cohort51] [main] liquibase.util                           : Filtered out:                 0
+2025-09-30T21:00:17.665+02:00  INFO 31616 --- [shop_cohort51] [main] liquibase.util                           : -------------------------------
+2025-09-30T21:00:17.665+02:00  INFO 31616 --- [shop_cohort51] [main] liquibase.util                           : Total change sets:           17
+2025-09-30T21:00:17.667+02:00  INFO 31616 --- [shop_cohort51] [main] liquibase.util                           : Update summary generated
+2025-09-30T21:00:17.668+02:00  INFO 31616 --- [shop_cohort51] [main] liquibase.command                        : Command execution complete
+2025-09-30T21:00:18.239+02:00  INFO 31616 --- [shop_cohort51] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-09-30T21:00:18.289+02:00  INFO 31616 --- [shop_cohort51] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.26.Final
+2025-09-30T21:00:18.319+02:00  INFO 31616 --- [shop_cohort51] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-09-30T21:00:18.563+02:00  INFO 31616 --- [shop_cohort51] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-09-30T21:00:18.661+02:00  INFO 31616 --- [shop_cohort51] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.6
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-09-30T21:00:19.651+02:00  INFO 31616 --- [shop_cohort51] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-09-30T21:00:19.655+02:00  INFO 31616 --- [shop_cohort51] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-09-30T21:00:20.230+02:00  WARN 31616 --- [shop_cohort51] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-09-30T21:00:20.539+02:00  INFO 31616 --- [shop_cohort51] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsServiceImpl
+2025-09-30T21:00:21.209+02:00  INFO 31616 --- [shop_cohort51] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/api'
+2025-09-30T21:00:21.220+02:00  INFO 31616 --- [shop_cohort51] [main] ait.shop.ShopCohort51Application         : Started ShopCohort51Application in 7.5 seconds (process running for 8.302)
+2025-09-30T21:00:30.348+02:00  INFO 31616 --- [shop_cohort51] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-09-30T21:00:30.349+02:00  INFO 31616 --- [shop_cohort51] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-09-30T21:00:30.351+02:00  INFO 31616 --- [shop_cohort51] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-09-30T21:02:02.268+02:00  INFO 31616 --- [shop_cohort51] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-09-30T21:02:02.613+02:00  INFO 31616 --- [shop_cohort51] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-09-30T21:02:02.619+02:00  INFO 31616 --- [shop_cohort51] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-09-30T21:02:02.621+02:00  INFO 31616 --- [shop_cohort51] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-09-30T21:02:02.630+02:00  INFO 31616 --- [shop_cohort51] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-09-30T21:02:09.169+02:00  INFO 33284 --- [shop_cohort51] [main] ait.shop.ShopCohort51Application         : Starting ShopCohort51Application using Java 17.0.16 with PID 33284 (D:\projects\ait_backend\shop_cohort51\target\classes started by ogors in D:\projects\ait_backend\shop_cohort51)
+2025-09-30T21:02:09.173+02:00  INFO 33284 --- [shop_cohort51] [main] ait.shop.ShopCohort51Application         : No active profile set, falling back to 1 default profile: "default"
+2025-09-30T21:02:10.125+02:00  INFO 33284 --- [shop_cohort51] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-09-30T21:02:10.196+02:00  INFO 33284 --- [shop_cohort51] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 60 ms. Found 4 JPA repository interfaces.
+2025-09-30T21:02:10.979+02:00  INFO 33284 --- [shop_cohort51] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-09-30T21:02:11.005+02:00  INFO 33284 --- [shop_cohort51] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-09-30T21:02:11.007+02:00  INFO 33284 --- [shop_cohort51] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.44]
+2025-09-30T21:02:11.077+02:00  INFO 33284 --- [shop_cohort51] [main] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring embedded WebApplicationContext
+2025-09-30T21:02:11.077+02:00  INFO 33284 --- [shop_cohort51] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1859 ms
+2025-09-30T21:02:11.260+02:00  INFO 33284 --- [shop_cohort51] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-09-30T21:02:11.425+02:00  INFO 33284 --- [shop_cohort51] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@720a1fd0
+2025-09-30T21:02:11.426+02:00  INFO 33284 --- [shop_cohort51] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-09-30T21:02:11.590+02:00  INFO 33284 --- [shop_cohort51] [main] liquibase.database                       : Set default schema name to public
+2025-09-30T21:02:12.424+02:00  INFO 33284 --- [shop_cohort51] [main] liquibase.changelog                      : Reading from public.databasechangelog
+2025-09-30T21:02:12.624+02:00  INFO 33284 --- [shop_cohort51] [main] liquibase.ui                             : Database is up to date, no changesets to execute
+2025-09-30T21:02:12.627+02:00  INFO 33284 --- [shop_cohort51] [main] liquibase.changelog                      : Reading from public.databasechangelog
+2025-09-30T21:02:12.644+02:00  INFO 33284 --- [shop_cohort51] [main] liquibase.util                           : UPDATE SUMMARY
+2025-09-30T21:02:12.645+02:00  INFO 33284 --- [shop_cohort51] [main] liquibase.util                           : Run:                          0
+2025-09-30T21:02:12.645+02:00  INFO 33284 --- [shop_cohort51] [main] liquibase.util                           : Previously run:              17
+2025-09-30T21:02:12.645+02:00  INFO 33284 --- [shop_cohort51] [main] liquibase.util                           : Filtered out:                 0
+2025-09-30T21:02:12.645+02:00  INFO 33284 --- [shop_cohort51] [main] liquibase.util                           : -------------------------------
+2025-09-30T21:02:12.645+02:00  INFO 33284 --- [shop_cohort51] [main] liquibase.util                           : Total change sets:           17
+2025-09-30T21:02:12.646+02:00  INFO 33284 --- [shop_cohort51] [main] liquibase.util                           : Update summary generated
+2025-09-30T21:02:12.648+02:00  INFO 33284 --- [shop_cohort51] [main] liquibase.command                        : Command execution complete
+2025-09-30T21:02:13.210+02:00  INFO 33284 --- [shop_cohort51] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-09-30T21:02:13.279+02:00  INFO 33284 --- [shop_cohort51] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.26.Final
+2025-09-30T21:02:13.329+02:00  INFO 33284 --- [shop_cohort51] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-09-30T21:02:13.634+02:00  INFO 33284 --- [shop_cohort51] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-09-30T21:02:13.713+02:00  INFO 33284 --- [shop_cohort51] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.6
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-09-30T21:02:14.834+02:00  INFO 33284 --- [shop_cohort51] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-09-30T21:02:14.838+02:00  INFO 33284 --- [shop_cohort51] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-09-30T21:02:15.417+02:00  WARN 33284 --- [shop_cohort51] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-09-30T21:02:15.706+02:00  INFO 33284 --- [shop_cohort51] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsServiceImpl
+2025-09-30T21:02:16.361+02:00  INFO 33284 --- [shop_cohort51] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/api'
+2025-09-30T21:02:16.373+02:00  INFO 33284 --- [shop_cohort51] [main] ait.shop.ShopCohort51Application         : Started ShopCohort51Application in 7.843 seconds (process running for 8.667)
+2025-09-30T21:02:24.887+02:00  INFO 33284 --- [shop_cohort51] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-09-30T21:02:24.887+02:00  INFO 33284 --- [shop_cohort51] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-09-30T21:02:24.888+02:00  INFO 33284 --- [shop_cohort51] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-09-30T21:02:25.448+02:00  INFO 33284 --- [shop_cohort51] [http-nio-8080-exec-2] ait.shop.logging.AspectLogging           : Method save of class ConsumerService was called with arguments ConsumerDTO: id - null, name - John
+2025-09-30T21:02:25.504+02:00  INFO 33284 --- [shop_cohort51] [http-nio-8080-exec-2] ait.shop.logging.AspectLogging           : Method save of class ConsumerService finished its work
+2025-09-30T21:28:26.272+02:00  INFO 33284 --- [shop_cohort51] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-09-30T21:28:26.645+02:00  INFO 33284 --- [shop_cohort51] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-09-30T21:28:26.651+02:00  INFO 33284 --- [shop_cohort51] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-09-30T21:28:26.655+02:00  INFO 33284 --- [shop_cohort51] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-09-30T21:28:26.659+02:00  INFO 33284 --- [shop_cohort51] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-09-30T21:33:31.536+02:00  INFO 19660 --- [shop_cohort51] [main] ait.shop.ShopCohort51Application         : Starting ShopCohort51Application using Java 17.0.16 with PID 19660 (D:\projects\ait_backend\shop_cohort51\target\classes started by ogors in D:\projects\ait_backend\shop_cohort51)
+2025-09-30T21:33:31.539+02:00  INFO 19660 --- [shop_cohort51] [main] ait.shop.ShopCohort51Application         : No active profile set, falling back to 1 default profile: "default"
+2025-09-30T21:33:32.501+02:00  INFO 19660 --- [shop_cohort51] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-09-30T21:33:32.578+02:00  INFO 19660 --- [shop_cohort51] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 66 ms. Found 4 JPA repository interfaces.
+2025-09-30T21:33:33.370+02:00  INFO 19660 --- [shop_cohort51] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-09-30T21:33:33.391+02:00  INFO 19660 --- [shop_cohort51] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-09-30T21:33:33.392+02:00  INFO 19660 --- [shop_cohort51] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.44]
+2025-09-30T21:33:33.502+02:00  INFO 19660 --- [shop_cohort51] [main] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring embedded WebApplicationContext
+2025-09-30T21:33:33.503+02:00  INFO 19660 --- [shop_cohort51] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1910 ms
+2025-09-30T21:33:33.700+02:00  INFO 19660 --- [shop_cohort51] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-09-30T21:33:33.855+02:00  INFO 19660 --- [shop_cohort51] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@273dec10
+2025-09-30T21:33:33.857+02:00  INFO 19660 --- [shop_cohort51] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-09-30T21:33:34.011+02:00  INFO 19660 --- [shop_cohort51] [main] liquibase.database                       : Set default schema name to public
+2025-09-30T21:33:34.612+02:00  INFO 19660 --- [shop_cohort51] [main] liquibase.changelog                      : Reading from public.databasechangelog
+2025-09-30T21:33:34.814+02:00  INFO 19660 --- [shop_cohort51] [main] liquibase.ui                             : Database is up to date, no changesets to execute
+2025-09-30T21:33:34.817+02:00  INFO 19660 --- [shop_cohort51] [main] liquibase.changelog                      : Reading from public.databasechangelog
+2025-09-30T21:33:34.830+02:00  INFO 19660 --- [shop_cohort51] [main] liquibase.util                           : UPDATE SUMMARY
+2025-09-30T21:33:34.830+02:00  INFO 19660 --- [shop_cohort51] [main] liquibase.util                           : Run:                          0
+2025-09-30T21:33:34.831+02:00  INFO 19660 --- [shop_cohort51] [main] liquibase.util                           : Previously run:              17
+2025-09-30T21:33:34.831+02:00  INFO 19660 --- [shop_cohort51] [main] liquibase.util                           : Filtered out:                 0
+2025-09-30T21:33:34.831+02:00  INFO 19660 --- [shop_cohort51] [main] liquibase.util                           : -------------------------------
+2025-09-30T21:33:34.831+02:00  INFO 19660 --- [shop_cohort51] [main] liquibase.util                           : Total change sets:           17
+2025-09-30T21:33:34.832+02:00  INFO 19660 --- [shop_cohort51] [main] liquibase.util                           : Update summary generated
+2025-09-30T21:33:34.832+02:00  INFO 19660 --- [shop_cohort51] [main] liquibase.command                        : Command execution complete
+2025-09-30T21:33:35.400+02:00  INFO 19660 --- [shop_cohort51] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-09-30T21:33:35.450+02:00  INFO 19660 --- [shop_cohort51] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.26.Final
+2025-09-30T21:33:35.495+02:00  INFO 19660 --- [shop_cohort51] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-09-30T21:33:35.814+02:00  INFO 19660 --- [shop_cohort51] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-09-30T21:33:35.928+02:00  INFO 19660 --- [shop_cohort51] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.6
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-09-30T21:33:36.932+02:00  INFO 19660 --- [shop_cohort51] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-09-30T21:33:36.934+02:00  INFO 19660 --- [shop_cohort51] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-09-30T21:33:37.489+02:00  WARN 19660 --- [shop_cohort51] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-09-30T21:33:37.820+02:00  INFO 19660 --- [shop_cohort51] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsServiceImpl
+2025-09-30T21:33:38.824+02:00  INFO 19660 --- [shop_cohort51] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/api'
+2025-09-30T21:33:38.868+02:00  INFO 19660 --- [shop_cohort51] [main] ait.shop.ShopCohort51Application         : Started ShopCohort51Application in 7.965 seconds (process running for 8.739)
+2025-09-30T21:34:18.419+02:00  INFO 19660 --- [shop_cohort51] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-09-30T21:34:18.419+02:00  INFO 19660 --- [shop_cohort51] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-09-30T21:34:18.421+02:00  INFO 19660 --- [shop_cohort51] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-09-30T21:34:18.883+02:00  WARN 19660 --- [shop_cohort51] [http-nio-8080-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content-Type 'text/plain;charset=UTF-8' is not supported]
+2025-09-30T21:34:55.665+02:00  INFO 19660 --- [shop_cohort51] [http-nio-8080-exec-3] ait.shop.logging.AspectLogging           : Method getAllActiveConsumers of class ConsumerService was called
+2025-09-30T21:34:55.713+02:00  INFO 19660 --- [shop_cohort51] [http-nio-8080-exec-3] ait.shop.logging.AspectLogging           : Method getAllActiveConsumers of class ConsumerService finished its work
+2025-09-30T21:41:32.529+02:00  INFO 19660 --- [shop_cohort51] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-09-30T21:41:32.895+02:00  INFO 19660 --- [shop_cohort51] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-09-30T21:41:32.900+02:00  INFO 19660 --- [shop_cohort51] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-09-30T21:41:32.902+02:00  INFO 19660 --- [shop_cohort51] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-09-30T21:41:32.908+02:00  INFO 19660 --- [shop_cohort51] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-09-30T21:41:38.594+02:00  INFO 6596 --- [shop_cohort51] [main] ait.shop.ShopCohort51Application         : Starting ShopCohort51Application using Java 17.0.16 with PID 6596 (D:\projects\ait_backend\shop_cohort51\target\classes started by ogors in D:\projects\ait_backend\shop_cohort51)
+2025-09-30T21:41:38.597+02:00  INFO 6596 --- [shop_cohort51] [main] ait.shop.ShopCohort51Application         : No active profile set, falling back to 1 default profile: "default"
+2025-09-30T21:41:39.537+02:00  INFO 6596 --- [shop_cohort51] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-09-30T21:41:39.600+02:00  INFO 6596 --- [shop_cohort51] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 55 ms. Found 4 JPA repository interfaces.
+2025-09-30T21:41:40.334+02:00  INFO 6596 --- [shop_cohort51] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-09-30T21:41:40.347+02:00  INFO 6596 --- [shop_cohort51] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-09-30T21:41:40.348+02:00  INFO 6596 --- [shop_cohort51] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.44]
+2025-09-30T21:41:40.434+02:00  INFO 6596 --- [shop_cohort51] [main] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring embedded WebApplicationContext
+2025-09-30T21:41:40.434+02:00  INFO 6596 --- [shop_cohort51] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1794 ms
+2025-09-30T21:41:40.673+02:00  INFO 6596 --- [shop_cohort51] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-09-30T21:41:40.820+02:00  INFO 6596 --- [shop_cohort51] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@5ab7ac02
+2025-09-30T21:41:40.822+02:00  INFO 6596 --- [shop_cohort51] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-09-30T21:41:40.979+02:00  INFO 6596 --- [shop_cohort51] [main] liquibase.database                       : Set default schema name to public
+2025-09-30T21:41:41.452+02:00  INFO 6596 --- [shop_cohort51] [main] liquibase.changelog                      : Reading from public.databasechangelog
+2025-09-30T21:41:41.634+02:00  INFO 6596 --- [shop_cohort51] [main] liquibase.ui                             : Database is up to date, no changesets to execute
+2025-09-30T21:41:41.637+02:00  INFO 6596 --- [shop_cohort51] [main] liquibase.changelog                      : Reading from public.databasechangelog
+2025-09-30T21:41:41.651+02:00  INFO 6596 --- [shop_cohort51] [main] liquibase.util                           : UPDATE SUMMARY
+2025-09-30T21:41:41.652+02:00  INFO 6596 --- [shop_cohort51] [main] liquibase.util                           : Run:                          0
+2025-09-30T21:41:41.652+02:00  INFO 6596 --- [shop_cohort51] [main] liquibase.util                           : Previously run:              17
+2025-09-30T21:41:41.652+02:00  INFO 6596 --- [shop_cohort51] [main] liquibase.util                           : Filtered out:                 0
+2025-09-30T21:41:41.652+02:00  INFO 6596 --- [shop_cohort51] [main] liquibase.util                           : -------------------------------
+2025-09-30T21:41:41.652+02:00  INFO 6596 --- [shop_cohort51] [main] liquibase.util                           : Total change sets:           17
+2025-09-30T21:41:41.654+02:00  INFO 6596 --- [shop_cohort51] [main] liquibase.util                           : Update summary generated
+2025-09-30T21:41:41.655+02:00  INFO 6596 --- [shop_cohort51] [main] liquibase.command                        : Command execution complete
+2025-09-30T21:41:42.708+02:00  INFO 6596 --- [shop_cohort51] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-09-30T21:41:42.760+02:00  INFO 6596 --- [shop_cohort51] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.26.Final
+2025-09-30T21:41:42.799+02:00  INFO 6596 --- [shop_cohort51] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-09-30T21:41:43.088+02:00  INFO 6596 --- [shop_cohort51] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-09-30T21:41:43.208+02:00  INFO 6596 --- [shop_cohort51] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.6
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-09-30T21:41:44.426+02:00  INFO 6596 --- [shop_cohort51] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-09-30T21:41:44.429+02:00  INFO 6596 --- [shop_cohort51] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-09-30T21:41:45.183+02:00  WARN 6596 --- [shop_cohort51] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-09-30T21:41:45.550+02:00  INFO 6596 --- [shop_cohort51] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsServiceImpl
+2025-09-30T21:41:46.258+02:00  INFO 6596 --- [shop_cohort51] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/api'
+2025-09-30T21:41:46.273+02:00  INFO 6596 --- [shop_cohort51] [main] ait.shop.ShopCohort51Application         : Started ShopCohort51Application in 8.334 seconds (process running for 9.17)
+2025-09-30T21:42:05.258+02:00  INFO 6596 --- [shop_cohort51] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-09-30T21:42:05.577+02:00  INFO 6596 --- [shop_cohort51] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-09-30T21:42:05.581+02:00  INFO 6596 --- [shop_cohort51] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-09-30T21:42:05.583+02:00  INFO 6596 --- [shop_cohort51] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-09-30T21:42:05.590+02:00  INFO 6596 --- [shop_cohort51] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-09-30T21:42:45.997+02:00  INFO 27664 --- [shop_cohort51] [main] ait.shop.ShopCohort51Application         : Starting ShopCohort51Application using Java 17.0.16 with PID 27664 (D:\projects\ait_backend\shop_cohort51\target\classes started by ogors in D:\projects\ait_backend\shop_cohort51)
+2025-09-30T21:42:46.000+02:00  INFO 27664 --- [shop_cohort51] [main] ait.shop.ShopCohort51Application         : No active profile set, falling back to 1 default profile: "default"
+2025-09-30T21:42:47.057+02:00  INFO 27664 --- [shop_cohort51] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-09-30T21:42:47.123+02:00  INFO 27664 --- [shop_cohort51] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 57 ms. Found 4 JPA repository interfaces.
+2025-09-30T21:42:47.873+02:00  INFO 27664 --- [shop_cohort51] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-09-30T21:42:47.885+02:00  INFO 27664 --- [shop_cohort51] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-09-30T21:42:47.886+02:00  INFO 27664 --- [shop_cohort51] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.44]
+2025-09-30T21:42:47.973+02:00  INFO 27664 --- [shop_cohort51] [main] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring embedded WebApplicationContext
+2025-09-30T21:42:47.974+02:00  INFO 27664 --- [shop_cohort51] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1913 ms
+2025-09-30T21:42:48.171+02:00  INFO 27664 --- [shop_cohort51] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-09-30T21:42:48.340+02:00  INFO 27664 --- [shop_cohort51] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6fc1a8f6
+2025-09-30T21:42:48.341+02:00  INFO 27664 --- [shop_cohort51] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-09-30T21:42:48.498+02:00  INFO 27664 --- [shop_cohort51] [main] liquibase.database                       : Set default schema name to public
+2025-09-30T21:42:48.966+02:00  INFO 27664 --- [shop_cohort51] [main] liquibase.changelog                      : Reading from public.databasechangelog
+2025-09-30T21:42:49.186+02:00  INFO 27664 --- [shop_cohort51] [main] liquibase.ui                             : Database is up to date, no changesets to execute
+2025-09-30T21:42:49.189+02:00  INFO 27664 --- [shop_cohort51] [main] liquibase.changelog                      : Reading from public.databasechangelog
+2025-09-30T21:42:49.205+02:00  INFO 27664 --- [shop_cohort51] [main] liquibase.util                           : UPDATE SUMMARY
+2025-09-30T21:42:49.206+02:00  INFO 27664 --- [shop_cohort51] [main] liquibase.util                           : Run:                          0
+2025-09-30T21:42:49.206+02:00  INFO 27664 --- [shop_cohort51] [main] liquibase.util                           : Previously run:              17
+2025-09-30T21:42:49.207+02:00  INFO 27664 --- [shop_cohort51] [main] liquibase.util                           : Filtered out:                 0
+2025-09-30T21:42:49.207+02:00  INFO 27664 --- [shop_cohort51] [main] liquibase.util                           : -------------------------------
+2025-09-30T21:42:49.207+02:00  INFO 27664 --- [shop_cohort51] [main] liquibase.util                           : Total change sets:           17
+2025-09-30T21:42:49.207+02:00  INFO 27664 --- [shop_cohort51] [main] liquibase.util                           : Update summary generated
+2025-09-30T21:42:49.208+02:00  INFO 27664 --- [shop_cohort51] [main] liquibase.command                        : Command execution complete
+2025-09-30T21:42:49.769+02:00  INFO 27664 --- [shop_cohort51] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-09-30T21:42:49.813+02:00  INFO 27664 --- [shop_cohort51] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.26.Final
+2025-09-30T21:42:49.847+02:00  INFO 27664 --- [shop_cohort51] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-09-30T21:42:50.095+02:00  INFO 27664 --- [shop_cohort51] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-09-30T21:42:50.185+02:00  INFO 27664 --- [shop_cohort51] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.6
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-09-30T21:42:51.385+02:00  INFO 27664 --- [shop_cohort51] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-09-30T21:42:51.389+02:00  INFO 27664 --- [shop_cohort51] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-09-30T21:42:51.943+02:00  WARN 27664 --- [shop_cohort51] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-09-30T21:42:52.254+02:00  INFO 27664 --- [shop_cohort51] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsServiceImpl
+2025-09-30T21:42:52.875+02:00  INFO 27664 --- [shop_cohort51] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/api'
+2025-09-30T21:42:52.885+02:00  INFO 27664 --- [shop_cohort51] [main] ait.shop.ShopCohort51Application         : Started ShopCohort51Application in 7.542 seconds (process running for 8.603)
+2025-09-30T21:43:10.172+02:00  INFO 27664 --- [shop_cohort51] [http-nio-8080-exec-4] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-09-30T21:43:10.172+02:00  INFO 27664 --- [shop_cohort51] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-09-30T21:43:10.173+02:00  INFO 27664 --- [shop_cohort51] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-09-30T21:43:10.733+02:00  INFO 27664 --- [shop_cohort51] [http-nio-8080-exec-4] ait.shop.logging.AspectLogging           : Method getAllActiveConsumers of class ConsumerService was called
+2025-09-30T21:43:10.796+02:00  INFO 27664 --- [shop_cohort51] [http-nio-8080-exec-4] ait.shop.logging.AspectLogging           : Method getAllActiveConsumers of class ConsumerService finished its work
+2025-09-30T21:55:41.418+02:00  INFO 27664 --- [shop_cohort51] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-09-30T21:55:41.738+02:00  INFO 27664 --- [shop_cohort51] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-09-30T21:55:41.743+02:00  INFO 27664 --- [shop_cohort51] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-09-30T21:55:41.747+02:00  INFO 27664 --- [shop_cohort51] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-09-30T21:55:41.752+02:00  INFO 27664 --- [shop_cohort51] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

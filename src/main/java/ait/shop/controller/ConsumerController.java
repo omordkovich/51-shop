@@ -17,8 +17,8 @@ public class ConsumerController {
     }
 
     @PostMapping
-    public ConsumerDTO saveConsumer(@RequestBody ConsumerDTO consumer) {
-        return service.saveConsumer(consumer);
+    public ConsumerDTO save(@RequestBody ConsumerDTO dto) {
+        return service.save(dto);
     }
 
     @GetMapping("/{id}")
@@ -29,5 +29,11 @@ public class ConsumerController {
     @GetMapping()
     public List<ConsumerDTO> getAll() {
         return service.getAllActiveConsumers();
+    }
+
+    @PostMapping("/{consumerId}/add-product/{productId}")
+    public void addProductToConsumersCart(
+            @PathVariable Long consumerId,
+            @PathVariable Long productId) {
     }
 }

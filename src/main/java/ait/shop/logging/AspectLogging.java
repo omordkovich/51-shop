@@ -1,6 +1,5 @@
 package ait.shop.logging;
 
-import ait.shop.model.dto.ProductDTO;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.*;
 import org.slf4j.Logger;
@@ -38,7 +37,7 @@ public class AspectLogging {
     }
 
     @Pointcut("execution(* ait.shop.services.ProductService.getById(..))")
-    public void getProductById(JoinPoint joinPoint) {
+    public void getProductById() {
     }
 
     @AfterReturning(
@@ -55,5 +54,48 @@ public class AspectLogging {
     )
     public void exceptionWhileGettingProductById(Exception e) {
         logger.warn("Method getProductById of the class ProductService throw an exception: {}", e);
+    }
+
+    @Pointcut("execution(* ait.shop.services.*.*(..))")
+    public void ProductServiceMethod() {
+    }
+
+    @Before("ProductServiceMethod()")
+    public void beforeProductServiceMethod(JoinPoint joinPoint) {
+        String className = joinPoint.getTarget().getClass().getSimpleName();
+        String methodName = joinPoint.getSignature().getName();
+        Object[] args = joinPoint.getArgs();
+        if (args != null && args.length > 0) {
+            logger.info("Method {} of class {} was called with arguments {}", methodName, className, args[0]);
+        } else {
+            logger.info("Method {} of class {} was called", methodName, className);
+        }
+    }
+
+    @After("ProductServiceMethod()")
+    public void afterProductServiceMethod(JoinPoint joinPoint) {
+        String className = joinPoint.getTarget().getClass().getSimpleName();
+        String methodName = joinPoint.getSignature().getName();
+        logger.info("Method {} of class {} finished its work", methodName, className);
+    }
+
+    @AfterThrowing(
+            pointcut = "ProductServiceMethod()",
+            throwing = "exception"
+    )
+    public void afterExceptionThrowing(Exception exception, JoinPoint joinPoint) {
+        String className = joinPoint.getTarget().getClass().getSimpleName();
+        String methodName = joinPoint.getSignature().getName();
+        logger.warn("Method {} of the class {} throw an exception: {}", methodName, className, exception);
+    }
+
+    @AfterReturning(
+            pointcut = "ProductServiceMethod()",
+            returning = "res"
+    )
+    public void afterReturningResult(Object res, JoinPoint joinPoint) {
+        String className = joinPoint.getTarget().getClass().getSimpleName();
+        String methodName = joinPoint.getSignature().getName();
+        logger.info("Method {} of the class {} successfully returned result: {}", methodName, className, res);
     }
 }

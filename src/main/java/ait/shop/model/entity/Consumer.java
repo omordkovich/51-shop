@@ -20,7 +20,18 @@ public class Consumer {
     @Column
     private boolean active;
 
+    @OneToOne(mappedBy = "consumer", cascade = CascadeType.ALL)
+    private Cart cart;
+
     public Consumer() {
+    }
+
+    public Cart getCart() {
+        return cart;
+    }
+
+    public void setCart(Cart cart) {
+        this.cart = cart;
     }
 
     public Long getId() {
@@ -55,11 +66,11 @@ public class Consumer {
     @Override
     public boolean equals(Object o) {
         if (!(o instanceof Consumer consumer)) return false;
-        return active == consumer.active && Objects.equals(id, consumer.id) && Objects.equals(name, consumer.name);
+        return active == consumer.active && Objects.equals(id, consumer.id) && Objects.equals(name, consumer.name) && Objects.equals(cart, consumer.cart);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, active);
+        return Objects.hash(id, name, active, cart);
     }
 }

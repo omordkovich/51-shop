@@ -5,9 +5,10 @@ import ait.shop.model.entity.Consumer;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
-@Mapper(componentModel = "spring")
+@Mapper(componentModel = "spring", uses = CartMappingService.class)
 public interface ConsumerMappingService {
     @Mapping(target = "id", ignore = true)
+    @Mapping(target = "cart", ignore = true)
     @Mapping(target = "active", constant = "true")
     Consumer mapDtoToEntity(ConsumerDTO dto);
 

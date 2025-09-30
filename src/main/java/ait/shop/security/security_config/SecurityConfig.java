@@ -42,7 +42,13 @@ public class SecurityConfig {
 //        3. Сохранение в БД только АДМИНАМ!
 
                                 .requestMatchers(HttpMethod.POST, "/products").hasRole("ADMIN")
+
+                                .requestMatchers(HttpMethod.POST, "/consumers").hasRole("ADMIN")
+                                .requestMatchers(HttpMethod.GET, "/consumers").hasAnyRole("ADMIN", "USER")
+                                .requestMatchers(HttpMethod.POST, "/{consumerId}/add-product/{productId}").hasAnyRole("ADMIN", "USER")
                 );
+
+
         return http.build();
     }
 }

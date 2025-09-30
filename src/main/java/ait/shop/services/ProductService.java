@@ -39,7 +39,8 @@ public class ProductService implements IProductService {
         Product product = repository.findById(id).orElse(null);
         if (product == null || !product.isActive()) {
             throw new IllegalArgumentException(String.format("Product with id: %d does not exist", id));
-        } ;
+        }
+        ;
         return mapper.mapEntityToDto(product);
     }
 
@@ -54,6 +55,14 @@ public class ProductService implements IProductService {
                 .map(mapper::mapEntityToDto)
                 //                .map(product -> mapper.mapEntityToDto(product))
                 .toList();
+    }
+
+    @Override
+    public Product getEntityById(Long id) {
+
+        return repository.findById(id)
+                .filter(Product::isActive)
+                .orElseThrow(() -> new IllegalArgumentException(String.format("Product with id: %d does not exist", id)));
     }
 
     @Override
