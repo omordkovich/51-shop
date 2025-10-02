@@ -31,9 +31,49 @@ public class ConsumerController {
         return service.getAllActiveConsumers();
     }
 
-    @PostMapping("/{consumerId}/add-product/{productId}")
+    @PutMapping("/{consumerId}/add-product/{productId}")
     public void addProductToConsumersCart(
             @PathVariable Long consumerId,
             @PathVariable Long productId) {
+        service.addProductToConsumersCart(consumerId, productId);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteById(@PathVariable Long id) {
+        service.deleteById(id);
+    }
+
+    @DeleteMapping("/delete/{name}")
+    public void deleteByName(@PathVariable String name) {
+        service.deleteByName(name);
+    }
+
+    @PostMapping("/{id}/restore")
+    public void restoreById(@PathVariable Long id) {
+        service.restoreConsumer(id);
+    }
+
+    @GetMapping("/count")
+    public Long count() {
+        return service.getCountActiveConsumers();
+    }
+
+    @DeleteMapping("{consumerId}/clean-cart")
+    public void cleanCart(@PathVariable Long consumerId) {
+        service.cleanCart(consumerId);
+    }
+
+    @DeleteMapping("/{consumerId}/remove-product/{productId}")
+    public void removeProductFromConsumersCart(
+            @PathVariable Long consumerId,
+            @PathVariable Long productId) {
+        service.removeProductFromConsumersCart(consumerId, productId);
+    }
+
+    @PatchMapping("{id}/update")
+    public void updateById(
+            @PathVariable Long id,
+            @RequestBody ConsumerDTO dto) {
+        service.update(id, dto);
     }
 }

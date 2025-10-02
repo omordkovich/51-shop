@@ -2,6 +2,7 @@ package ait.shop.services.interfaces;
 
 import ait.shop.model.dto.ConsumerDTO;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 public interface IConsumerService {
@@ -16,20 +17,37 @@ public interface IConsumerService {
     //➢ Вернуть одного покупателя из базы данных по его идентификатору (если он активен)
     ConsumerDTO getById(Long id);
 
-//    ConsumerDTO getActiveById(Long id);
+    //    ConsumerDTO getActiveConsumerById(Long id);
     //➢ Изменить одного покупателя в базе данных по его идентификатору
-//➢ Удалить покупателя из базы данных по его идентификатору
-//➢ Удалить покупателя из базы данных по его имени
-//➢ Восстановить удалённого покупателя в базе данных по его идентификатору
-//➢ Вернуть общее количество покупателей в базе данных (активных)
-//➢ Вернуть стоимость корзины покупателя по его идентификатору (если он активен)
-//➢ Вернуть среднюю стоимость продукта в корзине покупателя по его идентификатору (если он
+    ConsumerDTO update(Long id, ConsumerDTO consumer);
+
+    //➢ Удалить покупателя из базы данных по его идентификатору
+    ConsumerDTO deleteById(Long id);
+
+    //➢ Удалить покупателя из базы данных по его имени
+    ConsumerDTO deleteByName(String name);
+
+    //➢ Восстановить удалённого покупателя в базе данных по его идентификатору
+
+    ConsumerDTO restoreConsumer(Long id);
+
+    //➢ Вернуть общее количество покупателей в базе данных (активных)
+    long getCountActiveConsumers();
+
+    //➢ Вернуть стоимость корзины покупателя по его идентификатору (если он активен)
+    BigDecimal getTotalPriceOfProductsInCartByActiveConsumerId(Long id);
+
+    //➢ Вернуть среднюю стоимость продукта в корзине покупателя по его идентификатору (если он
 //активен)
-//➢ Добавить товар в корзину покупателя по их идентификаторам (если оба активны)
+    BigDecimal getAveragePriceOfActiveProductsInCartByActiveConsumerId(Long id);
+
+    //➢ Добавить товар в корзину покупателя по их идентификаторам (если оба активны)
     void addProductToConsumersCart(Long consumerId, Long productId);
 
-//➢ Удалить товар из корзины покупателя по их идентификаторам
-//➢ Полностью очистить корзину покупателя по его идентификатору (если он активен)
+    //➢ Удалить товар из корзины покупателя по их идентификаторам
+    void removeProductFromConsumersCart(Long consumerId, Long productId);
 
+    //➢ Полностью очистить корзину покупателя по его идентификатору (если он активен)
+    void cleanCart(Long consumerId);
 
 }

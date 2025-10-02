@@ -33,6 +33,7 @@ public class CartDTO {
         this.products = products;
     }
 
+
     @Override
     public boolean equals(Object o) {
         if (!(o instanceof CartDTO cartDTO)) return false;

@@ -34,21 +34,22 @@ public class SecurityConfig {
                 .httpBasic(Customizer.withDefaults())
                 .authorizeHttpRequests(auth -> auth
 //        1. Получение всех продуктов - Всем пользователям, включая анонимных
-
                                 .requestMatchers(HttpMethod.GET, "/products").permitAll()
 //        2.  Получение продукта по id - аутентифицированным пользователям с любой ролью
-
                                 .requestMatchers(HttpMethod.GET, "/products/{id}").authenticated()
 //        3. Сохранение в БД только АДМИНАМ!
-
                                 .requestMatchers(HttpMethod.POST, "/products").hasRole("ADMIN")
-
                                 .requestMatchers(HttpMethod.POST, "/consumers").hasRole("ADMIN")
                                 .requestMatchers(HttpMethod.GET, "/consumers").hasAnyRole("ADMIN", "USER")
-                                .requestMatchers(HttpMethod.POST, "/{consumerId}/add-product/{productId}").hasAnyRole("ADMIN", "USER")
+                                .requestMatchers(HttpMethod.PUT, "/consumers/{consumerId}/add-product/{productId}").hasAnyRole("ADMIN", "USER")
+                                .requestMatchers(HttpMethod.DELETE, "/consumers/{consumerId}/remove-product/{productId}").hasAnyRole("ADMIN", "USER")
+                                .requestMatchers(HttpMethod.DELETE, "/consumers/{consumerId}/clean-cart").hasAnyRole("ADMIN", "USER")
+                                .requestMatchers(HttpMethod.DELETE, "/consumers/{id}").hasRole("ADMIN")
+                                .requestMatchers(HttpMethod.DELETE, "/consumers/delete/{name}").hasRole("ADMIN")
+                                .requestMatchers(HttpMethod.GET, "/consumers/count").hasAnyRole("ADMIN", "USER")
+                                .requestMatchers(HttpMethod.POST, "/consumers/{id}/restore").hasRole("ADMIN")
+                                .requestMatchers(HttpMethod.PATCH, "/consumers/{id}/update").hasAnyRole("ADMIN", "USER")
                 );
-
-
         return http.build();
     }
 }
