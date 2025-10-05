@@ -45,7 +45,7 @@ public class SecurityConfig {
                                 .requestMatchers(HttpMethod.DELETE, "/consumers/{consumerId}/remove-product/{productId}").hasAnyRole("ADMIN", "USER")
                                 .requestMatchers(HttpMethod.DELETE, "/consumers/{consumerId}/clean-cart").hasAnyRole("ADMIN", "USER")
                                 .requestMatchers(HttpMethod.DELETE, "/consumers/{id}").hasRole("ADMIN")
-                                .requestMatchers(HttpMethod.DELETE, "/consumers/delete/{name}").hasRole("ADMIN")
+                                .requestMatchers(HttpMethod.DELETE, "/consumers/by-name/{name}").hasRole("ADMIN")
                                 .requestMatchers(HttpMethod.GET, "/consumers/count").hasAnyRole("ADMIN", "USER")
                                 .requestMatchers(HttpMethod.POST, "/consumers/{id}/restore").hasRole("ADMIN")
                                 .requestMatchers(HttpMethod.PATCH, "/consumers/{id}/update").hasAnyRole("ADMIN", "USER")

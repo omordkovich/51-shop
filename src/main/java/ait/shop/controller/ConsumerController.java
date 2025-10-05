@@ -43,7 +43,7 @@ public class ConsumerController {
         service.deleteById(id);
     }
 
-    @DeleteMapping("/delete/{name}")
+    @DeleteMapping("/by-name/{name}")
     public void deleteByName(@PathVariable String name) {
         service.deleteByName(name);
     }

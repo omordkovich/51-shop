@@ -42,27 +42,24 @@ public class ConsumerService implements IConsumerService {
 
     @Override
     public ConsumerDTO getById(Long id) {
-        Consumer consumer = repository.findById(id).orElse(null);
-        if (consumer == null || !consumer.isActive()) return null;
+        Consumer consumer = getActiveConsumerById(id);
         return mapper.mapEntityToDto(consumer);
     }
 
     @Override
     @Transactional
     public ConsumerDTO update(Long id, ConsumerDTO consumer) {
-        Consumer targetConsumer = repository.findById(id).orElse(null);
+        Consumer targetConsumer = getActiveConsumerById(id);
         targetConsumer.setName(consumer.getName());
-        repository.save(targetConsumer);
         return mapper.mapEntityToDto(targetConsumer);
     }
 
     @Override
     @Transactional
     public ConsumerDTO deleteById(Long id) {
-        Consumer consumer = repository.findById(id).orElse(null);
+        Consumer consumer = getActiveConsumerById(id);
         if (consumer == null || !consumer.isActive()) return null;
         consumer.setActive(false);
-        repository.save(consumer);
         return mapper.mapEntityToDto(consumer);
     }
 
@@ -73,23 +70,27 @@ public class ConsumerService implements IConsumerService {
         if (consumers.isEmpty()) return null;
         Consumer consumer = consumers.get(0);
         consumer.setActive(false);
-        repository.save(consumer);
         return mapper.mapEntityToDto(consumer);
     }
 
     @Override
     @Transactional
     public ConsumerDTO restoreConsumer(Long id) {
-        Consumer consumer = repository.findById(id).orElse(null);
-        if (consumer == null || consumer.isActive()) return null;
+        Consumer consumer = getActiveConsumerById(id);
+        if (consumer == null || consumer.isActive()) {
+            return null;
+        }
         consumer.setActive(true);
-        repository.save(consumer);
         return mapper.mapEntityToDto(consumer);
     }
 
     @Override
     public long getCountActiveConsumers() {
-        return repository.findAll().stream().filter(Consumer::isActive).count();
+        return repository
+                .findAll()
+                .stream()
+                .filter(Consumer::isActive)
+                .count();
     }
 
     @Override
@@ -109,7 +110,7 @@ public class ConsumerService implements IConsumerService {
         Cart cart = consumer.getCart();
 
         BigDecimal sum = getTotalPriceOfProductsInCartByActiveConsumerId(id);
-        Long activeProducts = cart.getProducts().stream().filter(Product::isActive).count();
+        long activeProducts = cart.getProducts().stream().filter(Product::isActive).count();
         return sum.divide(new BigDecimal(activeProducts), RoundingMode.HALF_UP);
     }
 
