@@ -8,7 +8,7 @@ spring:
   datasource:
     url: jdbc:postgresql://localhost:5433/g_51_shop
     username: my_user
-    password: pos1234
+    password: ${db.password}
     driver-class-name: org.postgresql.Driver
 
 

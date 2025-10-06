@@ -5,6 +5,7 @@ import ait.shop.model.entity.Product;
 import ait.shop.repository.IProductRepository;
 import ait.shop.services.interfaces.IProductService;
 import ait.shop.services.mapping.ProductMappingService;
+import jakarta.transaction.Transactional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -71,8 +72,11 @@ public class ProductService implements IProductService {
     }
 
     @Override
+    @Transactional
     public ProductDTO deleteById(Long id) {
-        return null;
+        Product product = getEntityById(id);
+        product.setActive(false);
+        return mapper.mapEntityToDto(product);
     }
 
     @Override

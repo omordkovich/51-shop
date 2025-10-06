@@ -35,11 +35,11 @@ public interface IConsumerService {
     long getCountActiveConsumers();
 
     //➢ Вернуть стоимость корзины покупателя по его идентификатору (если он активен)
-    BigDecimal getTotalPriceOfProductsInCartByActiveConsumerId(Long id);
+    BigDecimal getTotalPriceOfProductsInCartByActiveConsumerId(Long customerId);
 
     //➢ Вернуть среднюю стоимость продукта в корзине покупателя по его идентификатору (если он
 //активен)
-    BigDecimal getAveragePriceOfActiveProductsInCartByActiveConsumerId(Long id);
+    double getAveragePriceOfActiveProductsInCartByActiveConsumerId(Long customerId);
 
     //➢ Добавить товар в корзину покупателя по их идентификаторам (если оба активны)
     void addProductToConsumersCart(Long consumerId, Long productId);

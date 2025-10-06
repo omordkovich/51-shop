@@ -94,8 +94,8 @@ public class ConsumerService implements IConsumerService {
     }
 
     @Override
-    public BigDecimal getTotalPriceOfProductsInCartByActiveConsumerId(Long id) {
-        Consumer consumer = getActiveConsumerById(id);
+    public BigDecimal getTotalPriceOfProductsInCartByActiveConsumerId(Long customerId) {
+        Consumer consumer = getActiveConsumerById(customerId);
         Cart cart = consumer.getCart();
         return cart.getProducts().stream()
                 .filter(Product::isActive)
@@ -104,15 +104,27 @@ public class ConsumerService implements IConsumerService {
     }
 
     @Override
-    @Transactional
-    public BigDecimal getAveragePriceOfActiveProductsInCartByActiveConsumerId(Long id) {
-        Consumer consumer = getActiveConsumerById(id);
-        Cart cart = consumer.getCart();
+    public double getAveragePriceOfActiveProductsInCartByActiveConsumerId(Long customerId) {
+        Consumer consumer = getActiveConsumerById(customerId);
+        return consumer
+                .getCart()
+                .getProducts()
+                .stream()
+                .filter(Product::isActive)
+                .mapToDouble(x-> x.getPrice().doubleValue())
+                .average().orElse(0.0);
 
-        BigDecimal sum = getTotalPriceOfProductsInCartByActiveConsumerId(id);
-        long activeProducts = cart.getProducts().stream().filter(Product::isActive).count();
-        return sum.divide(new BigDecimal(activeProducts), RoundingMode.HALF_UP);
+
     }
+
+//    public BigDecimal getCustomersCartAveragePrice(Long customerId) {
+//        Consumer consumer = getActiveConsumerById(customerId);
+//        Cart cart = consumer.getCart();
+//
+//        BigDecimal sum = getTotalPriceOfProductsInCartByActiveConsumerId(customerId);
+//        long activeProducts = cart.getProducts().stream().filter(Product::isActive).count();
+//        return sum.divide(new BigDecimal(activeProducts), RoundingMode.HALF_UP);
+//    }
 
     public Consumer getActiveConsumerById(Long id) {
         return repository.findById(id)

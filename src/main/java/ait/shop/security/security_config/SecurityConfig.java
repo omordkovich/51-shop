@@ -49,6 +49,8 @@ public class SecurityConfig {
                                 .requestMatchers(HttpMethod.GET, "/consumers/count").hasAnyRole("ADMIN", "USER")
                                 .requestMatchers(HttpMethod.POST, "/consumers/{id}/restore").hasRole("ADMIN")
                                 .requestMatchers(HttpMethod.PATCH, "/consumers/{id}/update").hasAnyRole("ADMIN", "USER")
+                                .requestMatchers(HttpMethod.DELETE, "/products/{productId}").hasRole("ADMIN")
+
                 );
         return http.build();
     }
