@@ -95,6 +95,8 @@ public class ProductController {
     public BigDecimal getAveragePrice() {
         return service.getAveragePrice();
     }
+
+
     //POST /products/add = не правильно
     //POST /products = правильно
 
@@ -106,5 +108,21 @@ public class ProductController {
 
     //DELETE /products/2
 
+//    @ExceptionHandler(ProductNotFoundException.class)
+//    public ResponseEntity<String> handleException(ProductNotFoundException e) {
+//        return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
+//    }
+//
+//    @ExceptionHandler(ProductNotFoundException.class)
+//    @ResponseStatus(HttpStatus.NOT_FOUND)
+//    public String handleException(ProductNotFoundException e) {
+//        return e.getMessage();
+//    }
 
+
+//    @ExceptionHandler(ProductNotFoundException.class)
+//    @ResponseStatus(HttpStatus.NOT_FOUND)
+//    public Response handleException(ProductNotFoundException e) {
+//        return new Response(e.getMessage());
+//    }
 }

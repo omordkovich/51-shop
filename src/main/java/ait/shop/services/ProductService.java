@@ -1,5 +1,6 @@
 package ait.shop.services;
 
+import ait.shop.exception.handling.exceptions.prodict.ProductNotFoundException;
 import ait.shop.model.dto.ProductDTO;
 import ait.shop.model.entity.Product;
 import ait.shop.repository.IProductRepository;
@@ -30,6 +31,8 @@ public class ProductService implements IProductService {
 
     @Override
     public ProductDTO saveProduct(ProductDTO productDto) {
+        //title == null, title == ""
+
         Product product = mapper.mapDtoToEntity(productDto);
 //        product.setActive(true);
         return mapper.mapEntityToDto(repository.save(product));
@@ -37,12 +40,14 @@ public class ProductService implements IProductService {
 
     @Override
     public ProductDTO getById(Long id) {
-        Product product = repository.findById(id).orElse(null);
-        if (product == null || !product.isActive()) {
-            throw new IllegalArgumentException(String.format("Product with id: %d does not exist", id));
-        }
-        ;
-        return mapper.mapEntityToDto(product);
+        return mapper.mapEntityToDto(getEntityById(id));
+
+        //old method:
+        //        Product product = repository.findById(id).orElse(null);
+//        if (product == null || !product.isActive()) {
+//            throw new IllegalArgumentException(String.format("Product with id: %d does not exist", id));
+//        }
+//        return mapper.mapEntityToDto(product);
     }
 
     @Override
@@ -60,10 +65,9 @@ public class ProductService implements IProductService {
 
     @Override
     public Product getEntityById(Long id) {
-
         return repository.findById(id)
                 .filter(Product::isActive)
-                .orElseThrow(() -> new IllegalArgumentException(String.format("Product with id: %d does not exist", id)));
+                .orElseThrow(() -> new ProductNotFoundException(id));
     }
 
     @Override

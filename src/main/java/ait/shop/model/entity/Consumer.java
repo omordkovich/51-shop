@@ -1,6 +1,9 @@
 package ait.shop.model.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
 
 import java.util.Objects;
 
@@ -14,6 +17,12 @@ public class Consumer {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotNull(message = "Consumer name cannot be null")
+    @NotBlank(message = "Consumer name cannot be blank")
+    @Pattern(
+            regexp = "[A-Z][a-z ]{2,}",
+            message = "Consumer name should be at least three characters long and start with capital letter"
+    )
     @Column
     private String name;
 

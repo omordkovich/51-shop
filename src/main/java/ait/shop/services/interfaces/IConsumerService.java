@@ -17,7 +17,7 @@ public interface IConsumerService {
     //➢ Вернуть одного покупателя из базы данных по его идентификатору (если он активен)
     ConsumerDTO getById(Long id);
 
-    //    ConsumerDTO getActiveConsumerById(Long id);
+    //    ConsumerDTO getActiveEntityById(Long id);
     //➢ Изменить одного покупателя в базе данных по его идентификатору
     ConsumerDTO update(Long id, ConsumerDTO consumer);
 
@@ -25,11 +25,11 @@ public interface IConsumerService {
     ConsumerDTO deleteById(Long id);
 
     //➢ Удалить покупателя из базы данных по его имени
-    ConsumerDTO deleteByName(String name);
+    void deleteByName(String name);
 
     //➢ Восстановить удалённого покупателя в базе данных по его идентификатору
 
-    ConsumerDTO restoreConsumer(Long id);
+    void restoreConsumer(Long id);
 
     //➢ Вернуть общее количество покупателей в базе данных (активных)
     long getCountActiveConsumers();

@@ -1,5 +1,6 @@
 package ait.shop.services;
 
+import ait.shop.exception.handling.exceptions.consumer.ConsumerNotFoundException;
 import ait.shop.model.dto.ConsumerDTO;
 import ait.shop.model.entity.Cart;
 import ait.shop.model.entity.Consumer;
@@ -12,7 +13,6 @@ import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
-import java.math.RoundingMode;
 import java.util.List;
 
 @Service
@@ -31,7 +31,6 @@ public class ConsumerService implements IConsumerService {
     @Transactional
     public ConsumerDTO save(ConsumerDTO consumerDto) {
         Consumer entity = mapper.mapDtoToEntity(consumerDto);
-        //        consumer.setActive(true);
         Cart cart = new Cart();
         cart.setConsumer(entity);
         entity.setCart(cart);
@@ -42,14 +41,14 @@ public class ConsumerService implements IConsumerService {
 
     @Override
     public ConsumerDTO getById(Long id) {
-        Consumer consumer = getActiveConsumerById(id);
+        Consumer consumer = getActiveEntityById(id);
         return mapper.mapEntityToDto(consumer);
     }
 
     @Override
     @Transactional
     public ConsumerDTO update(Long id, ConsumerDTO consumer) {
-        Consumer targetConsumer = getActiveConsumerById(id);
+        Consumer targetConsumer = getActiveEntityById(id);
         targetConsumer.setName(consumer.getName());
         return mapper.mapEntityToDto(targetConsumer);
     }
@@ -57,31 +56,26 @@ public class ConsumerService implements IConsumerService {
     @Override
     @Transactional
     public ConsumerDTO deleteById(Long id) {
-        Consumer consumer = getActiveConsumerById(id);
-        if (consumer == null || !consumer.isActive()) return null;
+        Consumer consumer = getActiveEntityById(id);
         consumer.setActive(false);
         return mapper.mapEntityToDto(consumer);
     }
 
     @Override
     @Transactional
-    public ConsumerDTO deleteByName(String name) {
-        List<Consumer> consumers = repository.findByName(name);
-        if (consumers.isEmpty()) return null;
-        Consumer consumer = consumers.get(0);
-        consumer.setActive(false);
-        return mapper.mapEntityToDto(consumer);
+    public void deleteByName(String name) {
+        repository.findByName(name)
+                .filter(Consumer::isActive)
+                .orElseThrow(() -> new ConsumerNotFoundException(name))
+                .setActive(false);
     }
 
     @Override
     @Transactional
-    public ConsumerDTO restoreConsumer(Long id) {
-        Consumer consumer = getActiveConsumerById(id);
-        if (consumer == null || consumer.isActive()) {
-            return null;
-        }
-        consumer.setActive(true);
-        return mapper.mapEntityToDto(consumer);
+    public void restoreConsumer(Long id) {
+        repository.findById(id)
+                .orElseThrow(() -> new ConsumerNotFoundException(id))
+                .setActive(true);
     }
 
     @Override
@@ -95,7 +89,7 @@ public class ConsumerService implements IConsumerService {
 
     @Override
     public BigDecimal getTotalPriceOfProductsInCartByActiveConsumerId(Long customerId) {
-        Consumer consumer = getActiveConsumerById(customerId);
+        Consumer consumer = getActiveEntityById(customerId);
         Cart cart = consumer.getCart();
         return cart.getProducts().stream()
                 .filter(Product::isActive)
@@ -105,20 +99,20 @@ public class ConsumerService implements IConsumerService {
 
     @Override
     public double getAveragePriceOfActiveProductsInCartByActiveConsumerId(Long customerId) {
-        Consumer consumer = getActiveConsumerById(customerId);
+        Consumer consumer = getActiveEntityById(customerId);
         return consumer
                 .getCart()
                 .getProducts()
                 .stream()
                 .filter(Product::isActive)
-                .mapToDouble(x-> x.getPrice().doubleValue())
+                .mapToDouble(x -> x.getPrice().doubleValue())
                 .average().orElse(0.0);
 
 
     }
 
 //    public BigDecimal getCustomersCartAveragePrice(Long customerId) {
-//        Consumer consumer = getActiveConsumerById(customerId);
+//        Consumer consumer = getActiveEntityById(customerId);
 //        Cart cart = consumer.getCart();
 //
 //        BigDecimal sum = getTotalPriceOfProductsInCartByActiveConsumerId(customerId);
@@ -126,18 +120,16 @@ public class ConsumerService implements IConsumerService {
 //        return sum.divide(new BigDecimal(activeProducts), RoundingMode.HALF_UP);
 //    }
 
-    public Consumer getActiveConsumerById(Long id) {
+    public Consumer getActiveEntityById(Long id) {
         return repository.findById(id)
                 .filter(Consumer::isActive)
-                .orElseThrow(
-                        () -> new IllegalArgumentException("Customer not found")
-                );
+                .orElseThrow(() -> new ConsumerNotFoundException(id));
     }
 
     @Override
     @Transactional
     public void addProductToConsumersCart(Long consumerId, Long productId) {
-        Consumer consumer = getActiveConsumerById(consumerId);
+        Consumer consumer = getActiveEntityById(consumerId);
         Product product = productService.getEntityById(productId);
         consumer.getCart().getProducts().add(product);
     }
@@ -145,7 +137,7 @@ public class ConsumerService implements IConsumerService {
     @Override
     @Transactional
     public void removeProductFromConsumersCart(Long consumerId, Long productId) {
-        Consumer consumer = getActiveConsumerById(consumerId);
+        Consumer consumer = getActiveEntityById(consumerId);
         Cart cart = consumer.getCart();
         Product product = productService.getEntityById(productId);
         cart.getProducts().remove(product);
@@ -154,7 +146,7 @@ public class ConsumerService implements IConsumerService {
     @Override
     @Transactional
     public void cleanCart(Long consumerId) {
-        Consumer consumer = getActiveConsumerById(consumerId);
+        Consumer consumer = getActiveEntityById(consumerId);
         Cart cart = consumer.getCart();
         cart.getProducts().clear();
     }
